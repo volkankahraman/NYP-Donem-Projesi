@@ -37,6 +37,7 @@
         #endregion
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private System.Windows.Forms.Label label1;
 <<<<<<< HEAD
@@ -51,6 +52,8 @@
 >>>>>>> parent of 09e72e2... temel
 =======
 >>>>>>> parent of c956b7e... Button Ekledim
+=======
+>>>>>>> parent of 09e72e2... temel
 =======
 >>>>>>> parent of 09e72e2... temel
 =======
