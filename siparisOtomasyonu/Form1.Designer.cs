@@ -56,6 +56,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+<<<<<<< HEAD
 =======
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -65,6 +66,8 @@
 
         #endregion
 >>>>>>> parent of 09e72e2... temel
+=======
+>>>>>>> parent of c956b7e... Button Ekledim
     }
 }
 
