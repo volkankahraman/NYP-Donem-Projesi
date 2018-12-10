@@ -1,0 +1,12 @@
+C:\Users\asus\source\repos\TermProject\TermProject\bin\Debug\TermProject.exe.config
+C:\Users\asus\source\repos\TermProject\TermProject\bin\Debug\TermProject.exe
+C:\Users\asus\source\repos\TermProject\TermProject\bin\Debug\TermProject.pdb
+C:\Users\asus\source\repos\TermProject\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
+C:\Users\asus\source\repos\TermProject\TermProject\obj\Debug\TermProject.Properties.Resources.resources
+C:\Users\asus\source\repos\TermProject\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
+C:\Users\asus\source\repos\TermProject\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
+C:\Users\asus\source\repos\TermProject\TermProject\obj\Debug\TermProject.exe
+C:\Users\asus\source\repos\TermProject\TermProject\obj\Debug\TermProject.pdb
+C:\Users\asus\source\repos\TermProject\TermProject\obj\Debug\TermProject.AdminPanel.resources
+C:\Users\asus\source\repos\TermProject\TermProject\obj\Debug\TermProject.LoginPanel.resources
+C:\Users\asus\source\repos\TermProject\TermProject\obj\Debug\TermProject.AddEditPanel.resources
