@@ -36,11 +36,13 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -48,12 +50,13 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.listView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(801, 427);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Siparişler";
             // 
             // tabPage1
             // 
@@ -67,7 +70,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(801, 427);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Ürünler";
             // 
             // lstItems
             // 
@@ -78,6 +81,7 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
+            this.lstItems.FullRowSelect = true;
             this.lstItems.Location = new System.Drawing.Point(13, 20);
             this.lstItems.Name = "lstItems";
             this.lstItems.Size = new System.Drawing.Size(776, 347);
@@ -110,9 +114,14 @@
             this.columnHeader5.Text = "Açıklama";
             this.columnHeader5.Width = 173;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Resim Dosya Yolu";
+            this.columnHeader6.Width = 328;
+            // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(282, 373);
+            this.btnEdit.Location = new System.Drawing.Point(710, 386);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
@@ -122,7 +131,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(36, 373);
+            this.btnAdd.Location = new System.Drawing.Point(519, 386);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 2;
@@ -132,7 +141,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(161, 373);
+            this.btnDel.Location = new System.Drawing.Point(613, 386);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 1;
@@ -150,10 +159,13 @@
             this.tabControl1.Size = new System.Drawing.Size(809, 453);
             this.tabControl1.TabIndex = 0;
             // 
-            // columnHeader6
+            // listView1
             // 
-            this.columnHeader6.Text = "Resim Dosya Yolu";
-            this.columnHeader6.Width = 328;
+            this.listView1.Location = new System.Drawing.Point(13, 16);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(776, 387);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // AdminPanel
             // 
@@ -164,6 +176,7 @@
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminPanel_FormClosed);
+            this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -185,5 +198,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ListView listView1;
     }
 }

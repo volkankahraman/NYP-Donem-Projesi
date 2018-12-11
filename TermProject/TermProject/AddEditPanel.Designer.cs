@@ -158,6 +158,7 @@
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "İptal Et";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // openFileDialog
             // 
@@ -204,6 +205,7 @@
             this.Controls.Add(this.btnSave);
             this.Name = "AddEditPanel";
             this.Text = "AddEditPanel";
+            this.Shown += new System.EventHandler(this.AddEditPanel_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.productPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

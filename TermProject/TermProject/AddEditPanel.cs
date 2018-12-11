@@ -21,6 +21,7 @@ namespace TermProject
             InitializeComponent();
         }
 
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -50,13 +51,14 @@ namespace TermProject
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(txtId.Text) || string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtPrice.Text) || string.IsNullOrEmpty(txtWeight.Text) || string.IsNullOrEmpty(txtDescription.Text))
             {
                 MessageBox.Show("Lütfen Tüm Bilgileri Doldurunuz");
             }
             else
             {
-                if(string.IsNullOrEmpty(txtFilePath.Text))
+                if((string.IsNullOrEmpty(txtFilePath.Text)))
                 {
                     MessageBox.Show("Lütfen ürünün resmini yükleyiniz.");
                 }
@@ -68,9 +70,33 @@ namespace TermProject
                 }
                 
             }
-
-            
       
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void AddEditPanel_Shown(object sender, EventArgs e)
+        {
+            this.ControlBox = false;
+            txtId.Enabled = false;
+            if (string.IsNullOrEmpty(txtId.Text))
+            {
+                txtId.Text = admin.itemCount.ToString();
+            }
+        }
+        public void onEditItem(ListViewItem selectedItem)
+        {
+            txtId.Text = selectedItem.Text;
+            txtName.Text = selectedItem.SubItems[1].Text;
+            txtPrice.Text = selectedItem.SubItems[2].Text;
+            txtWeight.Text = selectedItem.SubItems[3].Text;
+            txtDescription.Text = selectedItem.SubItems[4].Text;
+            txtFilePath.Text = selectedItem.SubItems[1].Text;
+            path = selectedItem.SubItems[5].Text;
+            productPicture.ImageLocation = selectedItem.SubItems[5].Text;
         }
     }
 }
