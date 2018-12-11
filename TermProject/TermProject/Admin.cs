@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TermProject
 {
-    class Admin
+    public class Admin
     {
         public List<Item> items = new List<Item>();
         //LG LB493LSD 49 inch 3D Akıllı Tv
 
-        public void addItem(AdminPanel adminPanel,string id,string name,string price,string weight,string description)
+        public void addItem(AdminPanel adminPanel,string id,string name,string price,string weight,string description,string fileName)
         {
             Item item = new Item();
             
@@ -20,9 +20,10 @@ namespace TermProject
             item.Price = float.Parse(price);
             item.Weight = float.Parse(weight);
             item.Description = description;
+            item.FilePath = fileName;
             items.Add(item);
             adminPanel.listUpdate(items);
-
+            
         }
 
         public void editItem()
@@ -35,6 +36,10 @@ namespace TermProject
 
         }
 
+        public void itemMenuClear(AddEditPanel menu)
+        {
+            //menu.
+        }
         
     }
 }

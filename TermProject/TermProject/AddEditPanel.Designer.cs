@@ -36,13 +36,15 @@
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblWeight = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnUpload = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.productPicture = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.productPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -111,20 +113,12 @@
             this.lblWeight.TabIndex = 7;
             this.lblWeight.Text = "Ağırlık";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(271, 58);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 120);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnUpload
             // 
             this.btnUpload.AccessibleRole = System.Windows.Forms.AccessibleRole.Sound;
-            this.btnUpload.Location = new System.Drawing.Point(315, 184);
+            this.btnUpload.Location = new System.Drawing.Point(357, 184);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(98, 23);
+            this.btnUpload.Size = new System.Drawing.Size(56, 23);
             this.btnUpload.TabIndex = 9;
             this.btnUpload.Text = "Yükle";
             this.btnUpload.UseVisualStyleBackColor = true;
@@ -165,17 +159,41 @@
             this.btnCancel.Text = "İptal Et";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "opnFileDialog";
+            // 
+            // txtFilePath
+            // 
+            this.txtFilePath.Enabled = false;
+            this.txtFilePath.Location = new System.Drawing.Point(257, 186);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(102, 20);
+            this.txtFilePath.TabIndex = 15;
+            // 
+            // productPicture
+            // 
+            this.productPicture.Image = global::TermProject.Properties.Resources.default_product;
+            this.productPicture.ImageLocation = "";
+            this.productPicture.Location = new System.Drawing.Point(257, 48);
+            this.productPicture.Name = "productPicture";
+            this.productPicture.Size = new System.Drawing.Size(156, 130);
+            this.productPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.productPicture.TabIndex = 8;
+            this.productPicture.TabStop = false;
+            // 
             // AddEditPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 450);
+            this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.btnUpload);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.productPicture);
             this.Controls.Add(this.lblWeight);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.txtWeight);
@@ -186,7 +204,7 @@
             this.Controls.Add(this.btnSave);
             this.Name = "AddEditPanel";
             this.Text = "AddEditPanel";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,11 +220,13 @@
         private System.Windows.Forms.TextBox txtWeight;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblWeight;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox productPicture;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.TextBox txtFilePath;
     }
 }
