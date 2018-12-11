@@ -52,6 +52,7 @@
     <Compile Include="AddEditPanel.Designer.cs">
       <DependentUpon>AddEditPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin.cs" />
     <Compile Include="AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +77,7 @@
     <Compile Include="InfoPanel.Designer.cs">
       <DependentUpon>InfoPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item.cs" />
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>

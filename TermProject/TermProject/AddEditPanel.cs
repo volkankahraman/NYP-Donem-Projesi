@@ -12,6 +12,8 @@ namespace TermProject
 {
     public partial class AddEditPanel : Form
     {
+        public AdminPanel adminPanel;
+        Admin admin = new Admin();
         public AddEditPanel()
         {
             InitializeComponent();
@@ -29,10 +31,17 @@ namespace TermProject
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            AdminPanel adminPanel = new AdminPanel();
+            if (string.IsNullOrEmpty(txtId.Text) || string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtPrice.Text) || string.IsNullOrEmpty(txtWeight.Text) || string.IsNullOrEmpty(txtDescription.Text))
+            {
+                MessageBox.Show("Lütfen Tüm Bilgileri Doldurunuz");
+            }
+            else
+            {
+                admin.addItem(adminPanel, txtId.Text, txtName.Text, txtPrice.Text, txtWeight.Text, txtDescription.Text);
+                this.Close();
+            }
+
             
-            
-            this.Close();
       
         }
     }

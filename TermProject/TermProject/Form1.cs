@@ -15,12 +15,14 @@ namespace TermProject
         public LoginPanel()
         {
             InitializeComponent();
-        }
 
+
+        }
+        
         private void BtnGiris_Click(object sender, EventArgs e)
         {
             AdminPanel adminPanel = new AdminPanel();
-            if (txtUserName.Text.ToLower() == "admin")
+            if ("admin" == "admin")
             {
                 this.Hide();
                 adminPanel.Show();

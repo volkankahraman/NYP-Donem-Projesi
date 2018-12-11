@@ -1,0 +1,14 @@
+
+*.ide
+*.lock
+.vs/siparisOtomasyonu/v15/.suo
+*.ide-shm
+*.ide-wal
+*.cache
+*.cache
+TermProject/.vs/TermProject/v15/.suo
+TermProject/.vs/TermProject/v15/Server/sqlite3/db.lock
+*.ide-wal
+*.resources
+*.cache
+TermProject/.vs/TermProject/v15/.suo
