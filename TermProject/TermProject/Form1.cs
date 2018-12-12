@@ -21,9 +21,10 @@ namespace TermProject
         
         private void BtnGiris_Click(object sender, EventArgs e)
         {
-            AdminPanel adminPanel = new AdminPanel();
+            
             if (txtUserName.Text.ToLower() == "admin")
             {
+                AdminPanel adminPanel = new AdminPanel();
                 this.Hide();
                 adminPanel.Show();
           

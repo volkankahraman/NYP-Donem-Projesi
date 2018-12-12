@@ -11,17 +11,24 @@ namespace TermProject
     {
         AdminPanel adminPanel;
         public int itemCount=1;
-
-        public void addItem(AdminPanel adminPanel,string id,string name,string price,string weight,string description,string fileName)
+        public Admin()
         {
-            Item editItem = items.Find(item => item.Id == Convert.ToInt32(id));
+            foreach (Item item in items)
+            {
+                itemCount++;
+            }
+        }
+        public void addItem(AdminPanel adminPanel,int id,string name,float price,float weight,string description,string fileName,int stock)
+        {
+            Item editItem = items.Find(item => item.Id == id);
             if (editItem!=null)
             {
                 editItem.Name = name;
-                editItem.Price = float.Parse(price);
-                editItem.Weight = float.Parse(weight);
+                editItem.Price = price;
+                editItem.Weight = weight;
                 editItem.Description = description;
                 editItem.FilePath = fileName;
+                editItem.Stock = stock;
                 items[items.IndexOf(editItem)] = editItem;
             }
             else
@@ -29,10 +36,11 @@ namespace TermProject
                 Item item = new Item();
                 item.Id = itemCount;
                 item.Name = name;
-                item.Price = float.Parse(price);
-                item.Weight = float.Parse(weight);
+                item.Price = price;
+                item.Weight = weight;
                 item.Description = description;
                 item.FilePath = fileName;
+                item.Stock = stock;
                 items.Add(item);
                 itemCount++;
             }

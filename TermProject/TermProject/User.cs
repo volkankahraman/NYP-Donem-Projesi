@@ -8,6 +8,13 @@ namespace TermProject
 {
     public class User
     {
+
         public List<Item> items = new List<Item>();
+        public PrepareProgram prepareProgram = new PrepareProgram ();
+        public User()
+        {
+            prepareProgram.itemlist = items;
+            prepareProgram.loadDefaults();
+        }
     }
 }

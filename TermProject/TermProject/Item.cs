@@ -14,6 +14,7 @@ namespace TermProject
         public float Price { get; set; }
         public float Weight { get; set; }
         public string Description { get; set; }
+        public int Stock { get; set; }
         public string FilePath { get; set; }
     }
 }

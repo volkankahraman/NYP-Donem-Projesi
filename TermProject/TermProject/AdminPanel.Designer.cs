@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lstItems = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,7 +42,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -57,6 +58,14 @@
             this.tabPage2.Size = new System.Drawing.Size(801, 427);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Siparişler";
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(13, 16);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(776, 387);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // tabPage1
             // 
@@ -80,7 +89,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader7});
             this.lstItems.FullRowSelect = true;
             this.lstItems.Location = new System.Drawing.Point(13, 20);
             this.lstItems.Name = "lstItems";
@@ -112,12 +122,12 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Açıklama";
-            this.columnHeader5.Width = 173;
+            this.columnHeader5.Width = 161;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Resim Dosya Yolu";
-            this.columnHeader6.Width = 328;
+            this.columnHeader6.Width = 298;
             // 
             // btnEdit
             // 
@@ -159,13 +169,9 @@
             this.tabControl1.Size = new System.Drawing.Size(809, 453);
             this.tabControl1.TabIndex = 0;
             // 
-            // listView1
+            // columnHeader7
             // 
-            this.listView1.Location = new System.Drawing.Point(13, 16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(776, 387);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.columnHeader7.Text = "Stok";
             // 
             // AdminPanel
             // 
@@ -174,8 +180,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "AdminPanel";
-            this.Text = "AdminPanel";
+            this.Text = "Admin Panel";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminPanel_FormClosed);
+            this.Shown += new System.EventHandler(this.AdminPanel_Shown);
             this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -199,5 +206,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }

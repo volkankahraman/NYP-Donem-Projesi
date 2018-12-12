@@ -48,11 +48,12 @@ namespace TermProject
             txtWeight.Text = "";
             txtDescription.Text = "";
             txtFilePath.Text = "";
+            txtStock.Text = "";
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtId.Text) || string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtPrice.Text) || string.IsNullOrEmpty(txtWeight.Text) || string.IsNullOrEmpty(txtDescription.Text))
+            if (string.IsNullOrEmpty(txtId.Text) || string.IsNullOrEmpty(txtStock.Text) || string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtPrice.Text) || string.IsNullOrEmpty(txtWeight.Text) || string.IsNullOrEmpty(txtDescription.Text))
             {
                 MessageBox.Show("Lütfen Tüm Bilgileri Doldurunuz");
             }
@@ -64,7 +65,7 @@ namespace TermProject
                 }
                 else
                 {
-                    admin.addItem(adminPanel, txtId.Text, txtName.Text, txtPrice.Text, txtWeight.Text, txtDescription.Text, path);
+                    admin.addItem(adminPanel, Convert.ToInt32(txtId.Text), txtName.Text, float.Parse(txtPrice.Text), float.Parse(txtWeight.Text), txtDescription.Text, path,Convert.ToInt32(txtStock.Text));
                     itemMenuClear();
                     this.Hide();
                 }
@@ -97,6 +98,7 @@ namespace TermProject
             txtFilePath.Text = selectedItem.SubItems[1].Text;
             path = selectedItem.SubItems[5].Text;
             productPicture.ImageLocation = selectedItem.SubItems[5].Text;
+            txtStock.Text = selectedItem.SubItems[6].Text;
         }
     }
 }
