@@ -26,13 +26,13 @@ namespace TermProject
         {
 
         }
-        
+
         private void btnUpload_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "PNG(*.PNG)|*.png";
+            openFileDialog.Filter = "PNG(*.PNG)|*.png";            
 
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 txtFilePath.Text = openFileDialog.SafeFileName;
                 path = Path.GetTempFileName();
@@ -59,19 +59,19 @@ namespace TermProject
             }
             else
             {
-                if((string.IsNullOrEmpty(txtFilePath.Text)))
+                if ((string.IsNullOrEmpty(txtFilePath.Text)))
                 {
                     MessageBox.Show("Lütfen ürünün resmini yükleyiniz.");
                 }
                 else
                 {
-                    admin.addItem(adminPanel, Convert.ToInt32(txtId.Text), txtName.Text, float.Parse(txtPrice.Text), float.Parse(txtWeight.Text), txtDescription.Text, path,Convert.ToInt32(txtStock.Text));
+                    admin.addItem(adminPanel, Convert.ToInt32(txtId.Text), txtName.Text, float.Parse(txtPrice.Text), float.Parse(txtWeight.Text), txtDescription.Text, path, Convert.ToInt32(txtStock.Text));
                     itemMenuClear();
                     this.Hide();
                 }
-                
+
             }
-      
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

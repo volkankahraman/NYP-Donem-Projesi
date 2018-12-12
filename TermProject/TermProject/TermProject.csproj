@@ -71,13 +71,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="InfoPanel.cs">
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InfoPanel.Designer.cs">
-      <DependentUpon>InfoPanel.cs</DependentUpon>
+    <Compile Include="ItemDetail.Designer.cs">
+      <DependentUpon>ItemDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item.cs" />
+    <Compile Include="Orders.cs" />
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,8 +101,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InfoPanel.resx">
-      <DependentUpon>InfoPanel.cs</DependentUpon>
+    <EmbeddedResource Include="ItemDetail.resx">
+      <DependentUpon>ItemDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>

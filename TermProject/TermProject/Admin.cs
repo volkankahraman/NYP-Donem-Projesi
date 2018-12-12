@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace TermProject
 {
-    public class Admin:User
+    public class Admin : User
     {
         AdminPanel adminPanel;
-        public int itemCount=1;
+        public int itemCount = 1;
         public Admin()
         {
             foreach (Item item in items)
@@ -18,10 +18,11 @@ namespace TermProject
                 itemCount++;
             }
         }
-        public void addItem(AdminPanel adminPanel,int id,string name,float price,float weight,string description,string fileName,int stock)
+
+        public void addItem(AdminPanel adminPanel, int id, string name, float price, float weight, string description, string fileName, int stock)
         {
             Item editItem = items.Find(item => item.Id == id);
-            if (editItem!=null)
+            if (editItem != null)
             {
                 editItem.Name = name;
                 editItem.Price = price;
@@ -46,7 +47,8 @@ namespace TermProject
             }
             adminPanel.listUpdate();
         }
-        public void openMenu(AdminPanel adminsPanel,Admin admin, ListViewItem selectedItem)
+
+        public void openMenu(AdminPanel adminsPanel, Admin admin, ListViewItem selectedItem)
         {
             adminPanel = adminsPanel;
             AddEditPanel addEditPanel = new AddEditPanel();
@@ -54,10 +56,10 @@ namespace TermProject
             addEditPanel.admin = admin;
             addEditPanel.Show();
 
-            if (selectedItem!=null)
+            if (selectedItem != null)
             {
-                addEditPanel.onEditItem(selectedItem); 
-            }            
+                addEditPanel.onEditItem(selectedItem);
+            }
         }
 
         public void delItem(ListViewItem delItem)
@@ -75,6 +77,5 @@ namespace TermProject
         {
             //Burada Siparişler Listelenecek
         }
-        
     }
 }
