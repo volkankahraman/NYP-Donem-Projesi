@@ -45,6 +45,12 @@ namespace TermProject.DataSource
                 Username = "ulasgokce",
                 Password = "123"
             });
+            UserList.Add(new Admin()
+            {
+                UserType = UserType.ADMIN,
+                Username = "maho",
+                Password = "123"
+            });
             UserList.Add(new Customer()
             {
                 Id = 0,

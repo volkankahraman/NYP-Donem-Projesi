@@ -41,6 +41,14 @@ namespace TermProject
                 }
                 this.Hide();
             }
+            else if (username == "" || password == "")
+            {
+                MessageBox.Show("\nLütfen hem kullanıcıadı hem şifrenızı giriniz.");
+            }
+            else
+            {
+                MessageBox.Show("\nkullanıcıadıniz veya şifrenızi yanlış giriyorsunuz.\nTekrar deneyınız.");
+            }
         }
 
         private void LoginPanel_FormClosed(object sender, FormClosedEventArgs e)
