@@ -21,13 +21,7 @@ namespace TermProject.Forms
             Item = _item;
             InitializeComponent();
         }
-        private int GetNextID()
-        {
-            int ID = 0;
-            if (DataSourceSingleton.GetInstance().OrderDetails.Count > 0)
-                ID = DataSourceSingleton.GetInstance().OrderDetails.OrderByDescending(x => x.OrderID).FirstOrDefault().OrderID + 1;
-            return ID;
-        }
+        Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
         private void AddToCartPanel_Load(object sender, EventArgs e)
         {
             pbProductPicture.Image = Item.Picture;
@@ -39,35 +33,32 @@ namespace TermProject.Forms
         }
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(txtQuantity.Text) <= this.Item.Stock)
+            if (txtQuantity.Text != string.Empty)
             {
-                //MessageBox.Show(DataSourceSingleton.GetInstance().OrderDetails.Where(x => x.Item == this.Item).ToList().Count.ToString());
-                //DataSourceSingleton.GetInstance().OrderDetails.Add(new OrderDetail()
-                //{
-                //    OrderID = GetNextID(),
-                //    Item = this.Item,
-                //    TaxStatus = Enums.TaxStatus.UNTAXED,
-                //    Quantity = Convert.ToInt32(txtQuantity.Text)
-                //});
-                if (DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Where(x => x.Item == this.Item).ToList().Count == 0)
+                if (Convert.ToInt16(txtQuantity.Text) <= this.Item.Stock)
                 {
-                    DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Add(new Cart()
+                    if (ActiveCustomer.Cart.Where(x => x.Item.ID == this.Item.ID).ToList().Count == 0)
                     {
-                        Item = this.Item,
-                        Quantity = Convert.ToInt32(txtQuantity.Text),
-                        TaxStatus = (this.Item.Tax != 0 ? Enums.TaxStatus.TAXED : Enums.TaxStatus.UNTAXED)
-                    });
+                        ActiveCustomer.Cart.Add(new Cart()
+                        {
+                            Item = this.Item,
+                            Quantity = Convert.ToInt32(txtQuantity.Text),
+                            TaxStatus = (this.Item.Tax != 0 ? Enums.TaxStatus.TAXED : Enums.TaxStatus.UNTAXED)
+                        });
+                    }
+                    else
+                        ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity += Convert.ToInt32(txtQuantity.Text);
+                    this.Close();
                 }
                 else
-                    DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Find(x => x.Item == this.Item).Quantity += Convert.ToInt32(txtQuantity.Text);
-                this.Close();
+                    MessageBox.Show("Stok Dışı Ürün Sipariş Edilimez.\nBu Ürün İçin Stok Durumu: " + this.Item.Stock);
             }
             else
-                MessageBox.Show("Stok Dışı Ürün Sipariş Edilimez.\nBu Ürün İçin Stok Durumu: " + this.Item.Stock);
+                MessageBox.Show("Ürün Adedini Giriniz");
             CustomerPanel cp = (CustomerPanel)Application.OpenForms["CustomerPanel"];
-            if (DataSourceSingleton.GetInstance().ActiveCustomer.Cart != null)
-                if (DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Count > 0)
-                    cp.btnCartInfo.Text = "Sepet (" + DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Count + ")";
+            if (ActiveCustomer.Cart != null)
+                if (ActiveCustomer.Cart.Count > 0)
+                    cp.btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";
                 else
                     cp.btnCartInfo.Text = "Sepet";
         }

@@ -18,7 +18,7 @@ namespace TermProject
     {
         private void Change()
         {
-            MessageBox.Show("Para Üstünüz:" + (Convert.ToInt32(txtCashTendered.Text) - Convert.ToInt32(DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal())));
+            MessageBox.Show("Para Üstünüz:" + (Convert.ToInt32(txtCashTendered.Text) - Convert.ToInt32(DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal(0, 1))));
         }
         public Payment()
         {
@@ -33,7 +33,7 @@ namespace TermProject
             {
                 Cash cash = new Cash();
                 cash.CashTendered = txtCashTendered.Text;
-                cash.Amount = Convert.ToInt32(DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal());
+                cash.Amount = Convert.ToInt32(DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal(0, 1));
                 payment = cash;
                 Change();
             }
@@ -44,7 +44,7 @@ namespace TermProject
                 check.Name = txtCheckName.Text;
                 check.BankID = txtCheckNBR.Text;
                 CheckAuthorize = check.Authorized();
-                check.Amount = Convert.ToInt32(DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal());
+                check.Amount = Convert.ToInt32(DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal(0, 1));
                 payment = check;
             }
             if (rbCreditCard.Checked == true)
@@ -56,7 +56,7 @@ namespace TermProject
                 credit.Type = (CreditType)(a);
                 credit.Number = txtCCNumber.Text;
                 CreditCardAuthorize = credit.Authorized();
-                credit.Amount = Convert.ToInt32(DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal());
+                credit.Amount = Convert.ToInt32(DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal(0, 1));
                 payment = credit;
             }
             order.Payment = payment;
@@ -66,7 +66,7 @@ namespace TermProject
                 {
                     Item = DataSourceSingleton.GetInstance().ActiveCustomer.Cart[a].Item,
                     Quantity = DataSourceSingleton.GetInstance().ActiveCustomer.Cart[a].Quantity,
-                    TaxStatus= DataSourceSingleton.GetInstance().ActiveCustomer.Cart[a].TaxStatus
+                    TaxStatus = DataSourceSingleton.GetInstance().ActiveCustomer.Cart[a].TaxStatus
                 });
             }
             this.Close();
@@ -77,9 +77,9 @@ namespace TermProject
             order.Date = DateTime.Now;
             order.Customer = DataSourceSingleton.GetInstance().ActiveCustomer;
             DataSourceSingleton.GetInstance().OrderList.Add(order);
-            lblTotal.Text = "Toplam tutar:" + DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal();
-            lblTotalWeight.Text = "Toplam ağırlık:" + DataSourceSingleton.GetInstance().ActiveCustomer.CalculateWeight();
-            lblTotalTax.Text = "Toplam Vergi:" + DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTax();
+            lblTotal.Text = "Toplam tutar:" + DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal(0, 1);
+            lblTotalWeight.Text = "Toplam ağırlık:" + DataSourceSingleton.GetInstance().ActiveCustomer.CalculateWeight(0, 1);
+            lblTotalTax.Text = "Toplam Vergi:" + DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTax(0, 1);
         }
         private void rbCash_CheckedChanged(object sender, EventArgs e)
         {

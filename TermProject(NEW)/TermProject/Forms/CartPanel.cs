@@ -19,6 +19,8 @@ namespace TermProject.Forms
         {
             InitializeComponent();
         }
+        BindingList<Item> ItemList = DataSourceSingleton.GetInstance().ItemList;
+        Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
         private void Cart_Load(object sender, EventArgs e)
         {
             UpdateList();
@@ -32,22 +34,22 @@ namespace TermProject.Forms
             lvCart.Columns.Add("Ürün Adedi", -1, HorizontalAlignment.Left);
             lvCart.Columns.Add("Ürün Ağırlığı", -1, HorizontalAlignment.Left);
             lvCart.Columns.Add("Ürün Fiyatı", -1, HorizontalAlignment.Left);
-            if (DataSourceSingleton.GetInstance().ActiveCustomer.Cart != null)
+            if (ActiveCustomer.Cart != null)
                 for (int a = 0; a < DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Count; a++)
                     lvCart.Items.Add(new ListViewItem(new string[] {
-                    DataSourceSingleton.GetInstance().ActiveCustomer.Cart[a].Item.ID.ToString(),
-                    DataSourceSingleton.GetInstance().ActiveCustomer.Cart[a].Item.Name,
-                    DataSourceSingleton.GetInstance().ActiveCustomer.Cart[a].Quantity.ToString(),
-                    DataSourceSingleton.GetInstance().ActiveCustomer.CalculateWeight().ToString() + "KG",
-                    DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal().ToString() + "₺"
+                    ActiveCustomer.Cart[a].Item.ID.ToString(),
+                    ActiveCustomer.Cart[a].Item.Name,
+                    ActiveCustomer.Cart[a].Quantity.ToString(),
+                    ActiveCustomer.CalculateWeight(ActiveCustomer.Cart[a].Item.ID, 0).ToString() + "KG",
+                    ActiveCustomer.CalculateTotal(ActiveCustomer.Cart[a].Item.ID, 0).ToString() + "₺"
                 }));
             lvCart.FullRowSelect = true;
             for (int a = 1; a < 5; a++)
                 lvCart.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
             CustomerPanel cp = (CustomerPanel)Application.OpenForms["CustomerPanel"];
-            if (DataSourceSingleton.GetInstance().ActiveCustomer.Cart != null)
-                if (DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Count > 0)
-                    cp.btnCartInfo.Text = "Sepet (" + DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Count + ")";
+            if (ActiveCustomer.Cart != null)
+                if (ActiveCustomer.Cart.Count > 0)
+                    cp.btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";
                 else
                     cp.btnCartInfo.Text = "Sepet";
         }
@@ -60,8 +62,8 @@ namespace TermProject.Forms
                 removeControl = MessageBox.Show("Silmek İstediğinize Emin Misiniz?", "Uyarı", MessageBoxButtons.YesNo);
                 if (removeControl == DialogResult.Yes)
                 {
-                    Cart cartDetailToBeRemoved = DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
-                    DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Remove(cartDetailToBeRemoved);
+                    Cart cartDetailToBeRemoved = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
+                    ActiveCustomer.Cart.Remove(cartDetailToBeRemoved);
                 }
                 UpdateList();
             }
@@ -76,7 +78,7 @@ namespace TermProject.Forms
                 string _newQuantity = Microsoft.VisualBasic.Interaction.InputBox("Yeni adet sayısını giriniz.", "Güncelleme", "");
                 if (int.TryParse(_newQuantity, out newQuantity) == true)
                 {
-                    Cart cartDetailToBeUpdated = DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
+                    Cart cartDetailToBeUpdated = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
                     cartDetailToBeUpdated.Quantity = newQuantity;
                     UpdateList();
                 }

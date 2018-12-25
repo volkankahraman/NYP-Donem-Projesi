@@ -19,6 +19,8 @@ namespace TermProject
         {
             InitializeComponent();
         }
+        BindingList<Item> ItemList = DataSourceSingleton.GetInstance().ItemList;
+        Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
         private void CustomerPanel_Load(object sender, EventArgs e)
         {
             UpdateList();
@@ -29,17 +31,17 @@ namespace TermProject
             lvProductList.Columns.Add("Id", 0);
             lvProductList.Columns.Add("Ürün İsmi", -2, HorizontalAlignment.Left);
             lvProductList.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Left);
-            for (int a = 0; a < DataSourceSingleton.GetInstance().ItemList.Count; a++)
-                if (DataSourceSingleton.GetInstance().ItemList[a].Stock > 0)
+            for (int a = 0; a < ItemList.Count; a++)
+                if (ItemList[a].Stock > 0)
                     lvProductList.Items.Add(new ListViewItem(new string[] {
-                        DataSourceSingleton.GetInstance().ItemList[a].ID.ToString(),
-                        DataSourceSingleton.GetInstance().ItemList[a].Name,
-                        DataSourceSingleton.GetInstance().ItemList[a].Price.ToString() + "₺"
+                        ItemList[a].ID.ToString(),
+                        ItemList[a].Name,
+                        ItemList[a].Price.ToString() + "₺"
                     }));
             lvProductList.FullRowSelect = true;
-            if (DataSourceSingleton.GetInstance().ActiveCustomer.Cart != null)
-                if (DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Count > 0)
-                    btnCartInfo.Text = "Sepet (" + DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Count + ")";
+            if (ActiveCustomer.Cart != null)
+                if (ActiveCustomer.Cart.Count > 0)
+                    btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";
                 else
                     btnCartInfo.Text = "Sepet";
             for (int a = 1; a < 3; a++)
@@ -58,7 +60,7 @@ namespace TermProject
         private void lvProductList_DoubleClick(object sender, EventArgs e)
         {
             int id = Convert.ToInt16(lvProductList.SelectedItems[0].SubItems[0].Text);
-            Item itemTobeAddedToCart = DataSourceSingleton.GetInstance().ItemList.Where(x => x.ID == id).FirstOrDefault();
+            Item itemTobeAddedToCart = ItemList.Where(x => x.ID == id).FirstOrDefault();
             AddToCartPanel addToCartPanel = new AddToCartPanel(itemTobeAddedToCart);
             addToCartPanel.ShowDialog();
         }

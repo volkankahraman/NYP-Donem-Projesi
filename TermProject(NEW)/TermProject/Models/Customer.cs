@@ -22,25 +22,61 @@ namespace TermProject.Models
             List<OrderDetail> orders = (DataSource.DataSourceSingleton.GetInstance().OrderList.Where(a => a.Customer.Id == id).ToList().Count != 0 ? DataSource.DataSourceSingleton.GetInstance().OrderList.Find(x => x.Customer.Id == id).OrderDetails : null);
             return orders;
         }
-        public double CalculateTax()
+        public double CalculateTax(int id, int p)
         {
             double tax = 0;
-            foreach (Cart orderDetail in Cart)
-                tax += orderDetail.Quantity * (orderDetail.Item.Price * (Convert.ToDouble(orderDetail.Item.Tax) / Convert.ToDouble(100)));
+            if (p == 0)
+            {
+                foreach (Cart cartDetail in Cart)
+                    if (cartDetail.Item.ID == id)
+                    {
+                        tax += cartDetail.Quantity * (cartDetail.Item.Price * (Convert.ToDouble(cartDetail.Item.Tax) / Convert.ToDouble(100)));
+                        break;
+                    }
+            }
+            else if (p == 1)
+            {
+                foreach (Cart cartDetail1 in Cart)
+                    tax += cartDetail1.Quantity * (cartDetail1.Item.Price * (Convert.ToDouble(cartDetail1.Item.Tax) / Convert.ToDouble(100)));
+            }
             return tax;
         }
-        public double CalculateTotal()
+        public double CalculateTotal(int id, int p)
         {
             double total = 0;
-            foreach (Cart orderDetail in Cart)
-                total += orderDetail.Quantity * (orderDetail.Item.Price + (orderDetail.Item.Price * (Convert.ToDouble(orderDetail.Item.Tax) / Convert.ToDouble(100))));
+            if (p == 0)
+            {
+                foreach (Cart cartDetail in Cart)
+                    if (cartDetail.Item.ID == id)
+                    {
+                        total += cartDetail.Quantity * (cartDetail.Item.Price + (cartDetail.Item.Price * (Convert.ToDouble(cartDetail.Item.Tax) / Convert.ToDouble(100))));
+                        break;
+                    }
+            }
+            else if (p == 1)
+            {
+                foreach (Cart cartDetail1 in Cart)
+                    total += cartDetail1.Quantity * (cartDetail1.Item.Price + (cartDetail1.Item.Price * (Convert.ToDouble(cartDetail1.Item.Tax) / Convert.ToDouble(100))));
+            }
             return total;
         }
-        public int CalculateWeight()
+        public int CalculateWeight(int id, int p)
         {
             int weight = 0;
-            foreach (Cart orderDetail in Cart)
-                weight += orderDetail.Quantity * orderDetail.Item.Weight;
+            if (p == 0)
+            {
+                foreach (Cart cartDetail in Cart)
+                    if (cartDetail.Item.ID == id)
+                    {
+                        weight += cartDetail.Quantity * cartDetail.Item.Weight;
+                        break;
+                    }
+            }
+            else if (p == 1)
+            {
+                foreach (Cart cartDetail1 in Cart)
+                    weight += cartDetail1.Quantity * cartDetail1.Item.Weight;
+            }
             return weight;
         }
     }

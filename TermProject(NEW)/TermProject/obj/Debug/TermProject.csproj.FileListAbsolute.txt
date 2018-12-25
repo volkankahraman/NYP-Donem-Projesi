@@ -145,3 +145,21 @@ C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.exe
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.pdb
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.UpdatePicturePanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Payment.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.AdminPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.CustomerPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.LoginPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.UpdatePicturePanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Properties.Resources.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.exe
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.pdb
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe.config
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.pdb

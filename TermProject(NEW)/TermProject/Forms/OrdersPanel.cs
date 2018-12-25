@@ -19,18 +19,21 @@ namespace TermProject.Forms
         {
             InitializeComponent();
         }
+        Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
         public void UpdateList()
         {
             lvOrders.View = View.Details;
             lvOrders.Columns.Add("Ürün İsmi", -1, HorizontalAlignment.Left);
             lvOrders.Columns.Add("Ürün Adedi", -1, HorizontalAlignment.Left);
+            lvOrders.Columns.Add("Ürün Ağırlığı", -1, HorizontalAlignment.Left);
             lvOrders.Columns.Add("Ürün Fiyatı", -1, HorizontalAlignment.Left);
-            if (DataSourceSingleton.GetInstance().ActiveCustomer.getOrders(DataSourceSingleton.GetInstance().ActiveCustomer.Id) != null)
-                for (int a = 0; a < DataSourceSingleton.GetInstance().ActiveCustomer.getOrders(DataSourceSingleton.GetInstance().ActiveCustomer.Id).Count; a++)
+            if (ActiveCustomer.getOrders(ActiveCustomer.Id) != null)
+                for (int a = 0; a < ActiveCustomer.getOrders(ActiveCustomer.Id).Count; a++)
                     lvOrders.Items.Add(new ListViewItem(new string[] {
-                    DataSourceSingleton.GetInstance().ActiveCustomer.getOrders(DataSourceSingleton.GetInstance().ActiveCustomer.Id)[a].Item.Name,
-                    DataSourceSingleton.GetInstance().ActiveCustomer.getOrders(DataSourceSingleton.GetInstance().ActiveCustomer.Id)[a].Quantity.ToString(),
-                    DataSourceSingleton.GetInstance().ActiveCustomer.CalculateTotal().ToString()
+                    ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Item.Name,
+                    ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Quantity.ToString(),
+                    ActiveCustomer.CalculateWeight((ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Item.ID), 0).ToString() + " KG",
+                    ActiveCustomer.CalculateTotal((ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Item.ID), 0).ToString() + " ₺"
                 }));
             lvOrders.FullRowSelect = true;
             for (int a = 0; a < 3; a++)
