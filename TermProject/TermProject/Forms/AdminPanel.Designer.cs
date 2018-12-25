@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridOrders = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -36,13 +35,11 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.dataSourceSingletonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItems)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSourceSingletonBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -58,9 +55,12 @@
             // 
             // dataGridOrders
             // 
+            this.dataGridOrders.AllowUserToAddRows = false;
+            this.dataGridOrders.AllowUserToDeleteRows = false;
             this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridOrders.Location = new System.Drawing.Point(13, 6);
             this.dataGridOrders.Name = "dataGridOrders";
+            this.dataGridOrders.ReadOnly = true;
             this.dataGridOrders.Size = new System.Drawing.Size(776, 413);
             this.dataGridOrders.TabIndex = 0;
             // 
@@ -89,6 +89,7 @@
             this.dataGridItems.TabIndex = 4;
             this.dataGridItems.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridItems_CellBeginEdit);
             this.dataGridItems.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridItems_CellMouseDoubleClick);
+            this.dataGridItems.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridItems_DataError);
             // 
             // btnAdd
             // 
@@ -120,10 +121,6 @@
             this.tabControl1.Size = new System.Drawing.Size(809, 453);
             this.tabControl1.TabIndex = 0;
             // 
-            // dataSourceSingletonBindingSource
-            // 
-            this.dataSourceSingletonBindingSource.DataSource = typeof(TermProject.DataSource.DataSourceSingleton);
-            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,7 +136,6 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItems)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSourceSingletonBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,6 +149,5 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.DataGridView dataGridItems;
         private System.Windows.Forms.DataGridView dataGridOrders;
-        private System.Windows.Forms.BindingSource dataSourceSingletonBindingSource;
     }
 }

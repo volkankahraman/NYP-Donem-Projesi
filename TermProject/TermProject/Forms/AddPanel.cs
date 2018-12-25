@@ -47,18 +47,24 @@ namespace TermProject.Forms
                 }
                 else
                 {
-                    admin.addItem(new Item
+                    try
                     {
-                        ID = id.getNextId(),
-                        Name = txtName.Text,
-                        Weight = Convert.ToInt32(txtWeight.Text),
-                        Price = Convert.ToInt32(txtPrice.Text),
-                        Tax = Convert.ToInt32(txtTax.Text),
-                        Stock = Convert.ToInt32(txtStock.Text),
-                        Description = txtDescription.Text,
-                        Picture = productPicture.Image          
-                    });
-                    this.Close();
+                        admin.addItem(new Item
+                        {
+                            ID = id.getNextId(),
+                            Name = txtName.Text,
+                            Weight = Convert.ToInt32(txtWeight.Text),
+                            Price = Convert.ToInt32(txtPrice.Text),
+                            Tax = Convert.ToInt32(txtTax.Text),
+                            Stock = Convert.ToInt32(txtStock.Text),
+                            Description = txtDescription.Text,
+                            Picture = productPicture.Image
+                        });
+                        this.Close();
+                    }catch(Exception error)
+                    {
+                        MessageBox.Show("Lütfen tüm değerleri dökümanda belirtildiği gibi giriniz.");
+                    }
                 }
             }
         }
@@ -66,7 +72,8 @@ namespace TermProject.Forms
         private void btnLoad_Click(object sender, EventArgs e)
         {
             Picture picture = new Picture();
-            productPicture.Image = picture.getPicture();
+            if(picture.getPicture() != null)
+                productPicture.Image = picture.getPicture();
         }
     }
 }

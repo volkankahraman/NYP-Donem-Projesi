@@ -26,7 +26,8 @@ namespace TermProject.Forms
         private void btnLoad_Click(object sender, EventArgs e)
         {
             Picture picture = new Picture();
-            pictureItem.Image = picture.getPicture();
+            if (picture.getPicture() != null)
+                pictureItem.Image = picture.getPicture();
             admin.editPicture(pictureId, pictureItem.Image);
             this.Close();
         }

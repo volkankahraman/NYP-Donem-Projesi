@@ -22,7 +22,7 @@ namespace TermProject.Models.AdminModel
             if (file.ShowDialog() == DialogResult.OK)
             {
                 image = Image.FromFile(file.FileName);
-            }   
+            }
         }
         public Image getPicture()
         {

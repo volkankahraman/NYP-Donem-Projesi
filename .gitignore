@@ -6,6 +6,7 @@
 *.ide-wal
 *.cache
 *.cache
+*.suo
 TermProject/.vs/TermProject/v15/.suo
 TermProject/.vs/TermProject/v15/Server/sqlite3/db.lock
 *.ide-wal

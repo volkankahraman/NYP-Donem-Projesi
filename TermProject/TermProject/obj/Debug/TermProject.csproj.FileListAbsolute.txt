@@ -40,3 +40,126 @@ C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\o
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.exe
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.pdb
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.ItemDetail.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.AdminPanel.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.CustomerPanel.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.LoginPanel.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Properties.Resources.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.exe
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.pdb
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debug\TermProject.exe.config
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debug\TermProject.exe
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debug\TermProject.pdb
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePanel.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.Cart.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Payment.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\bin\Debug\TermProject.exe.config
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\bin\Debug\TermProject.exe
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\bin\Debug\TermProject.pdb
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.Forms.Cart.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.Payment.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePanel.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.AdminPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.CustomerPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.LoginPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.Properties.Resources.resources
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.exe
+C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\obj\Debug\TermProject.pdb
+G:\TermProject\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
+G:\TermProject\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+G:\TermProject\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+G:\TermProject\TermProject\obj\Debug\TermProject.Forms.Cart.resources
+G:\TermProject\TermProject\obj\Debug\TermProject.Payment.resources
+G:\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePanel.resources
+G:\TermProject\TermProject\obj\Debug\TermProject.AdminPanel.resources
+G:\TermProject\TermProject\obj\Debug\TermProject.CustomerPanel.resources
+G:\TermProject\TermProject\obj\Debug\TermProject.LoginPanel.resources
+G:\TermProject\TermProject\obj\Debug\TermProject.Properties.Resources.resources
+G:\TermProject\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
+G:\TermProject\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
+G:\TermProject\TermProject\obj\Debug\TermProject.exe
+G:\TermProject\TermProject\obj\Debug\TermProject.pdb
+G:\TermProject\TermProject\bin\Debug\TermProject.exe.config
+G:\TermProject\TermProject\bin\Debug\TermProject.exe
+G:\TermProject\TermProject\bin\Debug\TermProject.pdb
+E:\TermProject\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
+E:\TermProject\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+E:\TermProject\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+E:\TermProject\TermProject\obj\Debug\TermProject.Payment.resources
+E:\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePanel.resources
+E:\TermProject\TermProject\obj\Debug\TermProject.AdminPanel.resources
+E:\TermProject\TermProject\obj\Debug\TermProject.CustomerPanel.resources
+E:\TermProject\TermProject\obj\Debug\TermProject.LoginPanel.resources
+E:\TermProject\TermProject\obj\Debug\TermProject.Properties.Resources.resources
+E:\TermProject\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
+E:\TermProject\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
+E:\TermProject\TermProject\obj\Debug\TermProject.exe
+E:\TermProject\TermProject\obj\Debug\TermProject.pdb
+E:\TermProject\TermProject\bin\Debug\TermProject.exe.config
+E:\TermProject\TermProject\bin\Debug\TermProject.exe
+E:\TermProject\TermProject\bin\Debug\TermProject.pdb
+E:\TermProject\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
+E:\TermProject\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe.config
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.pdb
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Payment.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.UpdatePanel.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.AdminPanel.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.CustomerPanel.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.LoginPanel.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Properties.Resources.resources
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.exe
+C:\Users\asus\Source\Repos\volkankahraman\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.pdb
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe.config
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.pdb
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Payment.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.AdminPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.CustomerPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.LoginPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Properties.Resources.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.exe
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.pdb
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.UpdatePicturePanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Payment.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.AdminPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.CustomerPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.LoginPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Forms.UpdatePicturePanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.Properties.Resources.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.exe
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\obj\Debug\TermProject.pdb
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe.config
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.pdb

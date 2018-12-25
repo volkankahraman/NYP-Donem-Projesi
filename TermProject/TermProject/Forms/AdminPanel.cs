@@ -72,5 +72,10 @@ namespace TermProject
                 e.Cancel = true;
             }
         }
+
+        private void dataGridItems_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+             MessageBox.Show("Lütfen tüm değerleri dökümanda belirtildiği gibi giriniz.");
+        }
     }
 }
