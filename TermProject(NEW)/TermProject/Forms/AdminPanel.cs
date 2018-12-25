@@ -63,5 +63,14 @@ namespace TermProject
             }
             
         }
+
+        private void dataGridItems_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dataGridItems.SelectedCells[0].ColumnIndex == 0)
+            {
+                MessageBox.Show("Id Değiştirilemez");
+                e.Cancel = true;
+            }
+        }
     }
 }

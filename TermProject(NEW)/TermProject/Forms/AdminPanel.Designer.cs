@@ -87,6 +87,7 @@
             this.dataGridItems.Name = "dataGridItems";
             this.dataGridItems.Size = new System.Drawing.Size(783, 374);
             this.dataGridItems.TabIndex = 4;
+            this.dataGridItems.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridItems_CellBeginEdit);
             this.dataGridItems.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridItems_CellMouseDoubleClick);
             // 
             // btnAdd
