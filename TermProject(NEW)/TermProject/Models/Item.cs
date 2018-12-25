@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace TermProject.Models
         public int Weight { get; set; }
         public string Name { get; set; }
         public int Stock { get; set; }
-        public string Picture { get; set; }
+        public Image Picture { get; set; }
         public string Description { get; set; }
         public int GetPriceForQuantity()
         {

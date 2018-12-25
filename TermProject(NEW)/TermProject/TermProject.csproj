@@ -82,12 +82,6 @@
     <Compile Include="Forms\PaymentPanel.Designer.cs">
       <DependentUpon>PaymentPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdatePanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UpdatePanel.Designer.cs">
-      <DependentUpon>UpdatePanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,10 +100,18 @@
     <Compile Include="Forms\LoginPanel.Designer.cs">
       <DependentUpon>LoginPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UpdatePicturePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdatePicturePanel.Designer.cs">
+      <DependentUpon>UpdatePicturePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\AdminModel\Picture.cs" />
     <Compile Include="Models\BankModel\Bank.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\AdminModel\Id.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\OrderModels\Order.cs" />
     <Compile Include="Models\OrderModels\OrderDetail.cs" />
@@ -135,9 +137,6 @@
     <EmbeddedResource Include="Forms\PaymentPanel.resx">
       <DependentUpon>PaymentPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdatePanel.resx">
-      <DependentUpon>UpdatePanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginPanel.resx">
       <DependentUpon>LoginPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdatePicturePanel.resx">
+      <DependentUpon>UpdatePicturePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -176,5 +178,6 @@
   <ItemGroup>
     <None Include="Resources\lgtv.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

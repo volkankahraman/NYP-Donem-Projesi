@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,26 +30,28 @@ namespace TermProject.DataSource
         #endregion
 
         public List<User> UserList { get; set; }
-        public List<Item> ItemList { get; set; }
+        public BindingList<Item> ItemList { get; set; }
         public List<Order> OrderList { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
         public Customer ActiveCustomer { get; set; }
+        public Admin ActiveAdmin { get; set; }
+
         private void Initialize()
         {
             UserList = new List<User>();
-            ItemList = new List<Item>();
+            ItemList = new BindingList<Item>();
             OrderList = new List<Order>();
             OrderDetails = new List<OrderDetail>();
 
             UserList.Add(new Admin()
             {
                 UserType = UserType.ADMIN,
-                Username = "ulasgokce",
-                Password = "123"
+                Username = "1",
+                Password = "1"
             });
-            UserList.Add(new Admin()
+            UserList.Add(new Customer()
             {
-                UserType = UserType.ADMIN,
+                UserType = UserType.CUSTOMER,
                 Username = "maho",
                 Password = "123"
             });
@@ -78,7 +82,8 @@ namespace TermProject.DataSource
                 Price = 100,
                 Tax = 10,
                 Stock = 5,
-                Description = "Super Product"
+                Description = "Super Product",
+                Picture = new Bitmap(Properties.Resources.lgtv, new Size(300, 300))
             });
             ItemList.Add(new Item()
             {
@@ -88,7 +93,8 @@ namespace TermProject.DataSource
                 Price = 1000,
                 Tax = 5,
                 Stock = 0,
-                Description = "Mega Product"
+                Description = "Mega Product",
+                Picture = new Bitmap(Properties.Resources.lgtv, new Size(300, 300))
             });
             ItemList.Add(new Item()
             {
@@ -98,7 +104,8 @@ namespace TermProject.DataSource
                 Price = 10,
                 Tax = 50,
                 Stock = 7,
-                Description = "Uber Product"
+                Description = "Uber Product",
+                Picture = new Bitmap(Properties.Resources.lgtv, new Size(300, 300))
             });
         }
     }

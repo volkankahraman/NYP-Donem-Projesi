@@ -30,6 +30,7 @@ namespace TermProject
             {
                 if (loginUser.UserType == UserType.ADMIN)
                 {
+                    DataSourceSingleton.GetInstance().ActiveAdmin = (Admin)loginUser;
                     AdminPanel adminPanel = new AdminPanel();
                     adminPanel.Show();
                 }

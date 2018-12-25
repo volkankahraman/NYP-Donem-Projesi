@@ -30,7 +30,7 @@ namespace TermProject.Forms
         }
         private void AddToCartPanel_Load(object sender, EventArgs e)
         {
-            pbProductPicture.ImageLocation = Item.Picture;
+            pbProductPicture.Image = Item.Picture;
             lblProductName.Text = "Ürün İsmi: " + Item.Name;
             lblProductPrice.Text = "Ürün Fiyatı: " + Item.Price + "₺";
             lblProductWeight.Text = "Ürün Ağırlığı: " + Item.Weight + "KG";

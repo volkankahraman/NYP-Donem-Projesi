@@ -15,6 +15,8 @@ namespace TermProject
 {
     public partial class AdminPanel : Form
     {
+        Admin admin = DataSourceSingleton.GetInstance().ActiveAdmin;
+
         public AdminPanel()
         {
             InitializeComponent();
@@ -23,45 +25,18 @@ namespace TermProject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Item item = new Item();
-            item.ID = DataSourceSingleton.GetInstance().ItemList.Count + 1;
-            AddPanel add = new AddPanel(this);
+            AddPanel add = new AddPanel();
             add.ShowDialog();
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            DialogResult dialogResult = MessageBox.Show("Silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show("Seçtiğiniz itemi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
             if (dialogResult == DialogResult.Yes)
             {
-                Item itemTobeRemoved = DataSourceSingleton.GetInstance().ItemList.Where(x => x.ID == ID).FirstOrDefault();
-                if (itemTobeRemoved != null)
-                {
-                    DataSourceSingleton.GetInstance().ItemList.Remove(itemTobeRemoved);
-                    UpdateList();
-                    MessageBox.Show("Silme İşlemi Başarılı");
-                }
+                admin.delItem(dataGridItems.CurrentCell.RowIndex);
             }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            int ID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            Item itemTobeEdited = DataSourceSingleton.GetInstance().ItemList.Where(x => x.ID == ID).FirstOrDefault();
-            if (itemTobeEdited != null)
-            {
-                UpdatePanel Update = new UpdatePanel(itemTobeEdited, this);
-                Update.ShowDialog();
-            }
-        }
-
-        public void UpdateList()
-        {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = DataSourceSingleton.GetInstance().ItemList;
-            dataGridView2.DataSource = null;
-            dataGridView2.DataSource = DataSourceSingleton.GetInstance().OrderList;
         }
 
         private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
@@ -71,7 +46,22 @@ namespace TermProject
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-            UpdateList();
+            dataGridItems.RowTemplate.Height = 60;
+            admin.dataGridItems = dataGridItems;
+            admin.dataGridOrders = dataGridOrders;
+            admin.setDataSource();
+            ((DataGridViewImageColumn)dataGridItems.Columns[6]).ImageLayout = DataGridViewImageCellLayout.Zoom; ;
+
+
+        }
+
+        private void dataGridItems_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+           if(dataGridItems.SelectedCells[0].ColumnIndex == 6){
+                UpdatePicturePanel updataPicturePanel = new UpdatePicturePanel(Convert.ToInt32(dataGridItems.Rows[dataGridItems.SelectedCells[0].RowIndex].Cells[0].Value));
+                updataPicturePanel.ShowDialog();
+            }
+            
         }
     }
 }
