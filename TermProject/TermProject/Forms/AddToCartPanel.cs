@@ -16,14 +16,18 @@ namespace TermProject.Forms
     public partial class AddToCartPanel : Form
     {
         public Item Item { get; set; }
+
         public AddToCartPanel(Item _item)
         {
             Item = _item;
             InitializeComponent();
         }
+
         Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
+
         private void AddToCartPanel_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtQuantity;
             pbProductPicture.Image = Item.Picture;
             lblProductName.Text = "Ürün İsmi: " + Item.Name;
             lblProductPrice.Text = "Ürün Fiyatı: " + Item.Price + "₺";
@@ -31,6 +35,7 @@ namespace TermProject.Forms
             lblProductTax.Text = "Vergi: %" + Item.Tax;
             lblProductDescription.Text = "Ürün Açıklaması\n" + Item.Description;
         }
+
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
             int quantity;
@@ -50,7 +55,7 @@ namespace TermProject.Forms
                             });
                         }
                         else
-                            ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity += Convert.ToInt32(txtQuantity.Text);
+                            ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity += Convert.ToInt32(quantity);
                         this.Close();
                     }
                     else
@@ -78,6 +83,12 @@ namespace TermProject.Forms
                     cp.btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";
                 else
                     cp.btnCartInfo.Text = "Sepet";
+        }
+
+        private void txtQuantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnAddToCart_Click(this, new EventArgs());
         }
     }
 }

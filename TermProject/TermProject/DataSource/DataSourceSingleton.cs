@@ -42,10 +42,7 @@ namespace TermProject.DataSource
             ItemList = new BindingList<Item>();
             OrderList = new List<Order>();
             OrderDetails = new List<OrderDetail>();
-            /*OrderList.Add(new Order()
-            {
-                
-            }*/
+
             UserList.Add(new Admin()
             {
                 UserType = UserType.ADMIN,
@@ -109,20 +106,6 @@ namespace TermProject.DataSource
                 Stock = 7,
                 Description = "Uber Product",
                 Picture = new Bitmap(Properties.Resources.lgtv, new Size(300, 300))
-            });
-            OrderDetail a = new OrderDetail()
-            {
-                Item = (Item)ItemList.Where(x => x.ID == 1).ToList()[0],
-                OrderID = 1,
-                Quantity = 1,
-                TaxStatus = Enums.TaxStatus.TAXED
-            };
-            OrderDetails.Add(a);
-            OrderList.Add(new Order(OrderDetails)
-            {
-                Customer = (Customer)UserList.Where(x => x.UserType == Enums.UserType.CUSTOMER).ToList()[0],
-                Date = DateTime.Now,
-                OrderStatus = Enums.OrderStatus.BEKLEMEDE
             });
         }
     }

@@ -19,7 +19,9 @@ namespace TermProject.Forms
         {
             InitializeComponent();
         }
+
         Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
+
         public void UpdateList()
         {
             lvOrders.View = View.Details;
@@ -27,6 +29,11 @@ namespace TermProject.Forms
             lvOrders.Columns.Add("Ürün Adedi", -1, HorizontalAlignment.Left);
             lvOrders.Columns.Add("Ürün Ağırlığı", -1, HorizontalAlignment.Left);
             lvOrders.Columns.Add("Ürün Fiyatı", -1, HorizontalAlignment.Left);
+            lvOrders.FullRowSelect = true;
+
+            for (int a = 0; a < 4; a++)
+                lvOrders.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
+
             if (ActiveCustomer.getOrders(ActiveCustomer.Id) != null)
                 for (int a = 0; a < ActiveCustomer.getOrders(ActiveCustomer.Id).Count; a++)
                     lvOrders.Items.Add(new ListViewItem(new string[] {
@@ -35,14 +42,13 @@ namespace TermProject.Forms
                     ActiveCustomer.CalculateWeight((ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Item.ID), 0).ToString() + " KG",
                     ActiveCustomer.CalculateTotal((ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Item.ID), 0).ToString() + " ₺"
                 }));
-            lvOrders.FullRowSelect = true;
-            for (int a = 0; a < 3; a++)
-                lvOrders.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
         }
+
         private void OrdersPanel_Load(object sender, EventArgs e)
         {
             UpdateList();
         }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

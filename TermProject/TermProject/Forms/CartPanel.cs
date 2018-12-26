@@ -19,12 +19,16 @@ namespace TermProject.Forms
         {
             InitializeComponent();
         }
+
         BindingList<Item> ItemList = DataSourceSingleton.GetInstance().ItemList;
         Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
+        CustomerPanel cp = (CustomerPanel)Application.OpenForms["CustomerPanel"];
+
         private void Cart_Load(object sender, EventArgs e)
         {
             UpdateList();
         }
+
         public void UpdateList()
         {
             lvCart.Clear();
@@ -34,6 +38,11 @@ namespace TermProject.Forms
             lvCart.Columns.Add("Ürün Adedi", -1, HorizontalAlignment.Left);
             lvCart.Columns.Add("Ürün Ağırlığı", -1, HorizontalAlignment.Left);
             lvCart.Columns.Add("Ürün Fiyatı", -1, HorizontalAlignment.Left);
+            lvCart.FullRowSelect = true;
+
+            for (int a = 1; a < 5; a++)
+                lvCart.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
+
             if (ActiveCustomer.Cart != null)
                 for (int a = 0; a < DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Count; a++)
                     lvCart.Items.Add(new ListViewItem(new string[] {
@@ -43,16 +52,20 @@ namespace TermProject.Forms
                     ActiveCustomer.CalculateWeight(ActiveCustomer.Cart[a].Item.ID, 0).ToString() + "KG",
                     ActiveCustomer.CalculateTotal(ActiveCustomer.Cart[a].Item.ID, 0).ToString() + "₺"
                 }));
-            lvCart.FullRowSelect = true;
-            for (int a = 1; a < 5; a++)
-                lvCart.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
-            CustomerPanel cp = (CustomerPanel)Application.OpenForms["CustomerPanel"];
+
             if (ActiveCustomer.Cart != null)
                 if (ActiveCustomer.Cart.Count > 0)
                     cp.btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";
                 else
+                {
                     cp.btnCartInfo.Text = "Sepet";
+                    btnChangeQuantity.Enabled = false;
+                    btnPayment.Enabled = false;
+                    btnRemove.Enabled = false;
+                    MessageBox.Show("Sepette Ürün Kalmadı");
+                }
         }
+
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (lvCart.SelectedItems.Count > 0)
@@ -70,6 +83,7 @@ namespace TermProject.Forms
             else
                 MessageBox.Show("Lütfen Bir Ürün Seçin");
         }
+
         private void btnChangeQuantity_Click(object sender, EventArgs e)
         {
             if (lvCart.SelectedItems.Count > 0)
@@ -93,6 +107,7 @@ namespace TermProject.Forms
             else
                 MessageBox.Show("Lütfen Bir Ürün Seçin");
         }
+
         private void btnPayment_Click(object sender, EventArgs e)
         {
             Payment payment = new Payment();

@@ -20,7 +20,7 @@ namespace TermProject
             InitializeComponent();
         }
 
-        private void BtnGiris_Click(object sender, EventArgs e)
+        private void btnGiris_Click(object sender, EventArgs e)
         {
             string username = txtUserName.Text;
             string password = txtUserPassword.Text;
@@ -68,6 +68,12 @@ namespace TermProject
         private void LoginPanel_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtUserName;
+        }
+
+        private void txtUserName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnGiris_Click(this, new EventArgs());
         }
     }
 }
