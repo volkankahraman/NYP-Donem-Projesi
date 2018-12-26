@@ -29,18 +29,22 @@ namespace TermProject.Forms
             lvOrders.Columns.Add("Ürün Adedi", -1, HorizontalAlignment.Left);
             lvOrders.Columns.Add("Ürün Ağırlığı", -1, HorizontalAlignment.Left);
             lvOrders.Columns.Add("Ürün Fiyatı", -1, HorizontalAlignment.Left);
+            lvOrders.Columns.Add("Ürün Durumu", -1, HorizontalAlignment.Left);
             lvOrders.FullRowSelect = true;
 
-            for (int a = 0; a < 4; a++)
+            for (int a = 0; a < lvOrders.Columns.Count; a++)
                 lvOrders.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
 
-            if (ActiveCustomer.getOrders(ActiveCustomer.Id) != null)
-                for (int a = 0; a < ActiveCustomer.getOrders(ActiveCustomer.Id).Count; a++)
+            List<Order> orders = ActiveCustomer.getOrders(ActiveCustomer.Id);
+
+            if (orders != null)
+                for (int a = 0; a < orders.Count; a++)
                     lvOrders.Items.Add(new ListViewItem(new string[] {
-                    ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Item.Name,
-                    ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Quantity.ToString(),
-                    ActiveCustomer.CalculateWeight((ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Item.ID), 0).ToString() + " KG",
-                    ActiveCustomer.CalculateTotal((ActiveCustomer.getOrders(ActiveCustomer.Id)[a].Item.ID), 0).ToString() + " ₺"
+                    orders[0].OrderDetails[a].Item.Name,
+                    orders[0].OrderDetails[a].Quantity.ToString(),
+                    orders[0].OrderDetails[a].CalculateWeight().ToString() + "KG",
+                    orders[0].OrderDetails[a].CalculateSubTotal().ToString() + "₺",
+                    orders[0].OrderStatus.ToString()
                 }));
         }
 

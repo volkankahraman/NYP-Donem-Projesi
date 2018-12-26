@@ -34,13 +34,13 @@ namespace TermProject.Forms
             lvCart.Clear();
             lvCart.View = View.Details;
             lvCart.Columns.Add("Ürün Id", 0);
-            lvCart.Columns.Add("Ürün İsmi", -1, HorizontalAlignment.Left);
-            lvCart.Columns.Add("Ürün Adedi", -1, HorizontalAlignment.Left);
-            lvCart.Columns.Add("Ürün Ağırlığı", -1, HorizontalAlignment.Left);
-            lvCart.Columns.Add("Ürün Fiyatı", -1, HorizontalAlignment.Left);
+            lvCart.Columns.Add("Ürün İsmi", -2, HorizontalAlignment.Left);
+            lvCart.Columns.Add("Ürün Adedi", -2, HorizontalAlignment.Left);
+            lvCart.Columns.Add("Ürün Ağırlığı", -2, HorizontalAlignment.Left);
+            lvCart.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Left);
             lvCart.FullRowSelect = true;
 
-            for (int a = 1; a < 5; a++)
+            for (int a = 1; a < lvCart.Columns.Count; a++)
                 lvCart.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
 
             if (ActiveCustomer.Cart != null)
@@ -49,8 +49,8 @@ namespace TermProject.Forms
                     ActiveCustomer.Cart[a].Item.ID.ToString(),
                     ActiveCustomer.Cart[a].Item.Name,
                     ActiveCustomer.Cart[a].Quantity.ToString(),
-                    ActiveCustomer.CalculateWeight(ActiveCustomer.Cart[a].Item.ID, 0).ToString() + "KG",
-                    ActiveCustomer.CalculateTotal(ActiveCustomer.Cart[a].Item.ID, 0).ToString() + "₺"
+                    ActiveCustomer.Cart[a].CalculateWeight().ToString() + "KG",
+                    ActiveCustomer.Cart[a].CalculateSubTotal().ToString() + "₺"
                 }));
 
             if (ActiveCustomer.Cart != null)
@@ -59,10 +59,8 @@ namespace TermProject.Forms
                 else
                 {
                     cp.btnCartInfo.Text = "Sepet";
-                    btnChangeQuantity.Enabled = false;
-                    btnPayment.Enabled = false;
-                    btnRemove.Enabled = false;
                     MessageBox.Show("Sepette Ürün Kalmadı");
+                    this.Close();
                 }
         }
 
@@ -72,11 +70,14 @@ namespace TermProject.Forms
             {
                 int id = Convert.ToInt16(lvCart.SelectedItems[0].SubItems[0].Text);
                 DialogResult removeControl = new DialogResult();
+
                 removeControl = MessageBox.Show("Silmek İstediğinize Emin Misiniz?", "Uyarı", MessageBoxButtons.YesNo);
                 if (removeControl == DialogResult.Yes)
                 {
                     Cart cartDetailToBeRemoved = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
                     ActiveCustomer.Cart.Remove(cartDetailToBeRemoved);
+                    if (ActiveCustomer.Cart.Count == 0)
+                        this.Close();
                 }
                 UpdateList();
             }
@@ -92,14 +93,30 @@ namespace TermProject.Forms
                 string _newQuantity = Microsoft.VisualBasic.Interaction.InputBox("Yeni adet sayısını giriniz.", "Güncelleme", "");
                 if (int.TryParse(_newQuantity, out newQuantity) == true)
                 {
-                    if (newQuantity <= stock)
+                    if (newQuantity != 0)
                     {
-                        Cart cartDetailToBeUpdated = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
-                        cartDetailToBeUpdated.Quantity = newQuantity;
-                        UpdateList();
+                        if (newQuantity <= stock)
+                        {
+                            Cart cartDetailToBeUpdated = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
+                            cartDetailToBeUpdated.Quantity = newQuantity;
+                            UpdateList();
+                        }
+                        else
+                            MessageBox.Show("Bu Ürün İçin Stok: " + stock + " Adettir");
                     }
                     else
-                        MessageBox.Show("Bu Ürün İçin Stok: " + stock + " Adettir");
+                    {
+                        DialogResult removeControl = new DialogResult();
+                        removeControl = MessageBox.Show("Silmek İstediğinize Emin Misiniz?", "Uyarı", MessageBoxButtons.YesNo);
+
+                        if (removeControl == DialogResult.Yes)
+                        {
+                            Cart cartDetailToBeRemoved = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
+                            ActiveCustomer.Cart.Remove(cartDetailToBeRemoved);
+                            if (ActiveCustomer.Cart.Count == 0)
+                                this.Close();
+                        }
+                    }
                 }
                 else
                     MessageBox.Show("Bir hata oluştu tekrar deneyin.");
@@ -110,8 +127,12 @@ namespace TermProject.Forms
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Payment payment = new Payment();
-            payment.ShowDialog();
+            if (ActiveCustomer.Cart.Count != 0)
+            {
+                Payment payment = new Payment();
+                payment.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

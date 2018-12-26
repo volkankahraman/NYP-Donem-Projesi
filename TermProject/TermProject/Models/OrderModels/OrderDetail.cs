@@ -10,13 +10,5 @@ namespace TermProject.Models.OrderModels
     public class OrderDetail : Cart
     {
         public int OrderID { get; set; }
-        public int CalculateSubTotal()
-        {
-            return Quantity * Item.Price;
-        }
-        public int CalculateWeight()
-        {
-            return Quantity * Item.Weight;
-        }
     }
 }

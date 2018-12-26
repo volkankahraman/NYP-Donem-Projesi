@@ -24,6 +24,7 @@ namespace TermProject.Forms
         }
 
         Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
+        CustomerPanel cp = (CustomerPanel)Application.OpenForms["CustomerPanel"];
 
         private void AddToCartPanel_Load(object sender, EventArgs e)
         {
@@ -36,6 +37,12 @@ namespace TermProject.Forms
             lblProductDescription.Text = "Ürün Açıklaması\n" + Item.Description;
         }
 
+        void ClearAndFocus()
+        {
+            txtQuantity.Text = string.Empty;
+            txtQuantity.Focus();
+        }
+
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
             int quantity;
@@ -43,41 +50,48 @@ namespace TermProject.Forms
             {
                 if (int.TryParse(txtQuantity.Text, out quantity) == true)
                 {
-                    if (quantity <= this.Item.Stock)
+                    if (quantity != 0)
                     {
-                        if (ActiveCustomer.Cart.Where(x => x.Item.ID == this.Item.ID).ToList().Count == 0)
+                        if (quantity <= this.Item.Stock)
                         {
-                            ActiveCustomer.Cart.Add(new Cart()
+                            if (ActiveCustomer.Cart.Where(x => x.Item.ID == this.Item.ID).ToList().Count == 0)
                             {
-                                Item = this.Item,
-                                Quantity = quantity,
-                                TaxStatus = (this.Item.Tax != 0 ? Enums.TaxStatus.TAXED : Enums.TaxStatus.UNTAXED)
-                            });
+                                ActiveCustomer.Cart.Add(new Cart()
+                                {
+                                    Item = this.Item,
+                                    Quantity = quantity,
+                                    TaxStatus = (this.Item.Tax != 0 ? Enums.TaxStatus.TAXED : Enums.TaxStatus.UNTAXED)
+                                });
+                            }
+                            else
+                                ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity += quantity;
+                            this.Close();
                         }
                         else
-                            ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity += Convert.ToInt32(quantity);
-                        this.Close();
+                        {
+                            MessageBox.Show("Stok Dışı Ürün Sipariş Edilimez.\nBu Ürün İçin Stok Durumu: " + this.Item.Stock);
+                            txtQuantity.Text = string.Empty;
+                            txtQuantity.Focus();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Stok Dışı Ürün Sipariş Edilimez.\nBu Ürün İçin Stok Durumu: " + this.Item.Stock);
-                        txtQuantity.Text = string.Empty;
-                        txtQuantity.Focus();
+                        MessageBox.Show("Adet Sayısı 0'dan Büyük Olmalıdır");
+                        ClearAndFocus();
                     }
                 }
                 else
                 {
                     MessageBox.Show("Lütfen Sayı Girişi Yapınız");
-                    txtQuantity.Text = string.Empty;
-                    txtQuantity.Focus();
+                    ClearAndFocus();
                 }
             }
             else
             {
                 MessageBox.Show("Ürün Adedini Giriniz");
-                txtQuantity.Focus();
+                ClearAndFocus();
             }
-            CustomerPanel cp = (CustomerPanel)Application.OpenForms["CustomerPanel"];
+
             if (ActiveCustomer.Cart != null)
                 if (ActiveCustomer.Cart.Count > 0)
                     cp.btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";

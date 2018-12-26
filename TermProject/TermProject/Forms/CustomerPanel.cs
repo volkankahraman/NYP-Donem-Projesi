@@ -37,6 +37,9 @@ namespace TermProject
             lvProductList.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Left);
             lvProductList.FullRowSelect = true;
 
+            for (int a = 1; a < lvProductList.Columns.Count; a++)
+                lvProductList.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
+
             for (int a = 0; a < ItemList.Count; a++)
                 if (ItemList[a].Stock > 0)
                     lvProductList.Items.Add(new ListViewItem(new string[] {
@@ -50,9 +53,6 @@ namespace TermProject
                     btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";
                 else
                     btnCartInfo.Text = "Sepet";
-
-            for (int a = 1; a < 3; a++)
-                lvProductList.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void btnCartInfo_Click(object sender, EventArgs e)
