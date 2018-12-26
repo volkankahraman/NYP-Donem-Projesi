@@ -61,7 +61,7 @@ namespace TermProject.Forms
                             Picture = productPicture.Image
                         });
                         this.Close();
-                    }catch(Exception error)
+                    }catch(Exception)
                     {
                         MessageBox.Show("Lütfen tüm değerleri dökümanda belirtildiği gibi giriniz.");
                     }

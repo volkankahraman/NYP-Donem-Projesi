@@ -60,9 +60,10 @@
             this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridOrders.Location = new System.Drawing.Point(13, 6);
             this.dataGridOrders.Name = "dataGridOrders";
-            this.dataGridOrders.ReadOnly = true;
             this.dataGridOrders.Size = new System.Drawing.Size(776, 413);
             this.dataGridOrders.TabIndex = 0;
+            this.dataGridOrders.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridOrders_CellBeginEdit);
+            this.dataGridOrders.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridOrders_CellMouseDoubleClick);
             // 
             // tabPage1
             // 
@@ -88,6 +89,7 @@
             this.dataGridItems.Size = new System.Drawing.Size(783, 374);
             this.dataGridItems.TabIndex = 4;
             this.dataGridItems.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridItems_CellBeginEdit);
+            this.dataGridItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridItems_CellContentClick);
             this.dataGridItems.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridItems_CellMouseDoubleClick);
             this.dataGridItems.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridItems_DataError);
             // 

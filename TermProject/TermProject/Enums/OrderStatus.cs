@@ -8,8 +8,7 @@ namespace TermProject.Enums
 {
     public enum OrderStatus
     {
-        APPROVED = 0,
-        WAITING = 1,
-        CANCELED = 2
+        BEKLEMEDE = 0,
+        ONAYLANDI = 1
     }
 }

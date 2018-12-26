@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TermProject.DataSource;
+using TermProject.Enums;
 using TermProject.Forms;
 using TermProject.Models;
 
@@ -21,7 +22,7 @@ namespace TermProject
         {
             InitializeComponent();
         }
-        LoginPanel loginPanel = new LoginPanel();
+        
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -41,6 +42,7 @@ namespace TermProject
 
         private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
         {
+            LoginPanel loginPanel = new LoginPanel();
             loginPanel.Show();
         }
 
@@ -76,6 +78,38 @@ namespace TermProject
         private void dataGridItems_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
              MessageBox.Show("Lütfen tüm değerleri dökümanda belirtildiği gibi giriniz.");
+        }
+
+        private void dataGridItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridItems.SelectedCells[0].ColumnIndex == 6)
+            {
+                UpdatePicturePanel updatePicturePanel = new UpdatePicturePanel(Convert.ToInt32(dataGridItems.Rows[dataGridItems.SelectedCells[0].RowIndex].Cells[0].Value));
+                updatePicturePanel.ShowDialog();
+            }
+        }
+
+
+
+        private void dataGridOrders_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dataGridOrders.SelectedCells[0].ColumnIndex == 1 && Convert.ToInt32(dataGridOrders.SelectedCells[0].Value) == 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Siparişi onaylamak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    dataGridOrders.SelectedCells[0].Value = OrderStatus.ONAYLANDI;
+                }
+            }
+        }
+
+        private void dataGridOrders_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dataGridOrders.SelectedCells[0].ColumnIndex != 1 || Convert.ToInt32(dataGridOrders.SelectedCells[0].Value) == 1)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

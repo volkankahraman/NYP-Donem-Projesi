@@ -14,11 +14,9 @@ C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\bin\D
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debug\TermProject.exe
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debug\TermProject.pdb
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
-C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.AddEditPanel.resources
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.AdminPanel.resources
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.CustomerPanel.resources
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.LoginPanel.resources
-C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.InfoPanel.resources
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Payment.resources
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Properties.Resources.resources
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.csproj.GenerateResource.cache
@@ -166,3 +164,8 @@ C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\o
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePicturePanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
+C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePicturePanel.resources
