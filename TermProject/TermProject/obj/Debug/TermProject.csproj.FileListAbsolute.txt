@@ -49,9 +49,7 @@ C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debu
 C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debug\TermProject.exe
 C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debug\TermProject.pdb
 C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
-C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePanel.resources
 C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
-C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.Cart.resources
 C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Payment.resources
 C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\bin\Debug\TermProject.exe.config
 C:\Users\Ardanuc AKAR\Desktop\TermProject\TermProject\bin\Debug\TermProject.exe
@@ -169,3 +167,6 @@ C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\D
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
 C:\Users\Volkan\Documents\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePicturePanel.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
+C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePicturePanel.resources
