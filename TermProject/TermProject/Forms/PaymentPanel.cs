@@ -26,6 +26,9 @@ namespace TermProject
         Order order;
         Models.PaymentModels.Payment payment;
         Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
+        BindingList<Item> ItemList = DataSourceSingleton.GetInstance().ItemList;
+        CustomerPanel cp = (CustomerPanel)Application.OpenForms["CustomerPanel"];
+
         void PaymentSuccess()
         {
             order.Payment = payment;
@@ -37,8 +40,15 @@ namespace TermProject
                     Quantity = ActiveCustomer.Cart[a].Quantity,
                     TaxStatus = ActiveCustomer.Cart[a].TaxStatus
                 });
+                ItemList.Where(x => x.ID == ActiveCustomer.Cart[a].Item.ID).FirstOrDefault().Stock -= ActiveCustomer.Cart[a].Quantity;
             }
             ActiveCustomer.Cart.Clear();
+            if (ActiveCustomer.Cart != null)
+                if (ActiveCustomer.Cart.Count > 0)
+                    cp.btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";
+                else
+                    cp.btnCartInfo.Text = "Sepet";
+            cp.UpdateList();
             this.Close();
         }
         private void btnPay_Click(object sender, EventArgs e)
@@ -79,9 +89,10 @@ namespace TermProject
                 Check check = new Check();
                 check.Name = txtCheckName.Text;
                 check.BankID = txtCheckNBR.Text;
-                CheckAuthorize = check.Authorized();
                 check.Amount = Convert.ToInt32(ActiveCustomer.CalculateTotal());
+                CheckAuthorize = check.Authorized();
                 payment = check;
+                PaymentSuccess();
             }
             if (rbCreditCard.Checked == true)
             {
@@ -91,9 +102,10 @@ namespace TermProject
                 int a = cbCreditType.SelectedIndex;
                 credit.Type = (CreditType)(a);
                 credit.Number = txtCCNumber.Text;
-                CreditCardAuthorize = credit.Authorized();
                 credit.Amount = Convert.ToInt32(ActiveCustomer.CalculateTotal());
+                CreditCardAuthorize = credit.Authorized();
                 payment = credit;
+                PaymentSuccess();
             }
 
 

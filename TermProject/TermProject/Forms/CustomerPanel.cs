@@ -31,6 +31,7 @@ namespace TermProject
 
         public void UpdateList()
         {
+            lvProductList.Clear();
             lvProductList.View = View.Details;
             lvProductList.Columns.Add("Id", 0);
             lvProductList.Columns.Add("Ürün İsmi", -2, HorizontalAlignment.Left);
