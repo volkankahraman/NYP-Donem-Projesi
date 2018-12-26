@@ -29,7 +29,6 @@ C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\b
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debug\TermProject.exe
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\bin\Debug\TermProject.pdb
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
-C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.AddEditPanel.resources
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.AdminPanel.resources
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.CustomerPanel.resources
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.LoginPanel.resources
@@ -39,7 +38,6 @@ C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\o
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.csproj.CoreCompileInputs.cache
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.exe
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.pdb
-C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.ItemDetail.resources
 C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.csprojAssemblyReference.cache
 C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.AdminPanel.resources
 C:\Users\Ulas\Desktop\Git Hub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.CustomerPanel.resources
@@ -163,3 +161,8 @@ C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProj
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe.config
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.exe
 C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject(NEW)\TermProject\bin\Debug\TermProject.pdb
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.AddPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.AddToCartPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.CartPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.OrdersPanel.resources
+C:\Users\Ardanuc AKAR\Desktop\GitHub\NYP-Donem-Projesi\TermProject\TermProject\obj\Debug\TermProject.Forms.UpdatePicturePanel.resources

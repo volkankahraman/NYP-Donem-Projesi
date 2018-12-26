@@ -42,19 +42,32 @@ namespace TermProject
                 }
                 this.Hide();
             }
-            else if (username == "" || password == "")
+            else if (username == string.Empty)
             {
-                MessageBox.Show("\nLütfen hem kullanıcıadı hem şifrenızı giriniz.");
+                MessageBox.Show("Kullanıcı Adı Boş Geçilemez");
+                txtUserName.Focus();
+            }
+            else if (password == string.Empty)
+            {
+                MessageBox.Show("Şifre Boş Geçilemez");
+                txtUserPassword.Focus();
             }
             else
             {
-                MessageBox.Show("\nkullanıcıadıniz veya şifrenızi yanlış giriyorsunuz.\nTekrar deneyınız.");
+                MessageBox.Show("Kullanıcı Adı veya Şifreniz Yanlıştır.\nTekrar Deneyiniz");
+                txtUserPassword.Text = string.Empty;
+                txtUserPassword.Focus();
             }
         }
 
         private void LoginPanel_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LoginPanel_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = txtUserName;
         }
     }
 }

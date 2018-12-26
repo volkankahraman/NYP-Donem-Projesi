@@ -23,6 +23,7 @@ namespace TermProject
         Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
         private void CustomerPanel_Load(object sender, EventArgs e)
         {
+            lblCustomerName.Text = "Merhaba " + ActiveCustomer.Name;
             UpdateList();
         }
         public void UpdateList()

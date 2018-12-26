@@ -33,28 +33,45 @@ namespace TermProject.Forms
         }
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
+            int quantity;
             if (txtQuantity.Text != string.Empty)
             {
-                if (Convert.ToInt16(txtQuantity.Text) <= this.Item.Stock)
+                if (int.TryParse(txtQuantity.Text, out quantity) == true)
                 {
-                    if (ActiveCustomer.Cart.Where(x => x.Item.ID == this.Item.ID).ToList().Count == 0)
+                    if (quantity <= this.Item.Stock)
                     {
-                        ActiveCustomer.Cart.Add(new Cart()
+                        if (ActiveCustomer.Cart.Where(x => x.Item.ID == this.Item.ID).ToList().Count == 0)
                         {
-                            Item = this.Item,
-                            Quantity = Convert.ToInt32(txtQuantity.Text),
-                            TaxStatus = (this.Item.Tax != 0 ? Enums.TaxStatus.TAXED : Enums.TaxStatus.UNTAXED)
-                        });
+                            ActiveCustomer.Cart.Add(new Cart()
+                            {
+                                Item = this.Item,
+                                Quantity = quantity,
+                                TaxStatus = (this.Item.Tax != 0 ? Enums.TaxStatus.TAXED : Enums.TaxStatus.UNTAXED)
+                            });
+                        }
+                        else
+                            ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity += Convert.ToInt32(txtQuantity.Text);
+                        this.Close();
                     }
                     else
-                        ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity += Convert.ToInt32(txtQuantity.Text);
-                    this.Close();
+                    {
+                        MessageBox.Show("Stok Dışı Ürün Sipariş Edilimez.\nBu Ürün İçin Stok Durumu: " + this.Item.Stock);
+                        txtQuantity.Text = string.Empty;
+                        txtQuantity.Focus();
+                    }
                 }
                 else
-                    MessageBox.Show("Stok Dışı Ürün Sipariş Edilimez.\nBu Ürün İçin Stok Durumu: " + this.Item.Stock);
+                {
+                    MessageBox.Show("Lütfen Sayı Girişi Yapınız");
+                    txtQuantity.Text = string.Empty;
+                    txtQuantity.Focus();
+                }
             }
             else
+            {
                 MessageBox.Show("Ürün Adedini Giriniz");
+                txtQuantity.Focus();
+            }
             CustomerPanel cp = (CustomerPanel)Application.OpenForms["CustomerPanel"];
             if (ActiveCustomer.Cart != null)
                 if (ActiveCustomer.Cart.Count > 0)

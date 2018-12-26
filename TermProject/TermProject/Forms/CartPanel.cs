@@ -74,13 +74,18 @@ namespace TermProject.Forms
         {
             if (lvCart.SelectedItems.Count > 0)
             {
-                int newQuantity, id = Convert.ToInt16(lvCart.SelectedItems[0].SubItems[0].Text);
+                int newQuantity, id = Convert.ToInt16(lvCart.SelectedItems[0].SubItems[0].Text), stock = ItemList.Where(x => x.ID == id).ToList()[0].Stock;
                 string _newQuantity = Microsoft.VisualBasic.Interaction.InputBox("Yeni adet sayısını giriniz.", "Güncelleme", "");
                 if (int.TryParse(_newQuantity, out newQuantity) == true)
                 {
-                    Cart cartDetailToBeUpdated = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
-                    cartDetailToBeUpdated.Quantity = newQuantity;
-                    UpdateList();
+                    if (newQuantity <= stock)
+                    {
+                        Cart cartDetailToBeUpdated = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
+                        cartDetailToBeUpdated.Quantity = newQuantity;
+                        UpdateList();
+                    }
+                    else
+                        MessageBox.Show("Bu Ürün İçin Stok: " + stock + " Adettir");
                 }
                 else
                     MessageBox.Show("Bir hata oluştu tekrar deneyin.");

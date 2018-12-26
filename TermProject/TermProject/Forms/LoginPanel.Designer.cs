@@ -108,6 +108,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginPanel_FormClosed);
+            this.Load += new System.EventHandler(this.LoginPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

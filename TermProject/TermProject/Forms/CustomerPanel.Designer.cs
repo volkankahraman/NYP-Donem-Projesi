@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerPanel));
             this.btnCartInfo = new System.Windows.Forms.Button();
-            this.lblNote = new System.Windows.Forms.Label();
+            this.lblCustomerName = new System.Windows.Forms.Label();
             this.lvProductList = new System.Windows.Forms.ListView();
             this.btnOrders = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -49,14 +49,14 @@
             this.btnCartInfo.UseVisualStyleBackColor = true;
             this.btnCartInfo.Click += new System.EventHandler(this.btnCartInfo_Click);
             // 
-            // lblNote
+            // lblCustomerName
             // 
-            this.lblNote.AutoSize = true;
-            this.lblNote.Location = new System.Drawing.Point(10, 35);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(205, 13);
-            this.lblNote.TabIndex = 4;
-            this.lblNote.Text = "Not: Sepete ürün eklemek için çift tıklayın.";
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCustomerName.Location = new System.Drawing.Point(12, 22);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(0, 20);
+            this.lblCustomerName.TabIndex = 4;
             // 
             // lvProductList
             // 
@@ -86,7 +86,7 @@
             this.ClientSize = new System.Drawing.Size(894, 493);
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.lvProductList);
-            this.Controls.Add(this.lblNote);
+            this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.btnCartInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CustomerPanel";
@@ -101,7 +101,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblNote;
+        private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.ListView lvProductList;
         public System.Windows.Forms.Button btnCartInfo;
         public System.Windows.Forms.Button btnOrders;

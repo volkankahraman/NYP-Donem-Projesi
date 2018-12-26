@@ -40,7 +40,7 @@
             this.btnChangeQuantity.Name = "btnChangeQuantity";
             this.btnChangeQuantity.Size = new System.Drawing.Size(91, 23);
             this.btnChangeQuantity.TabIndex = 1;
-            this.btnChangeQuantity.Text = "Sayısını değiştir";
+            this.btnChangeQuantity.Text = "Adetini Değiştir";
             this.btnChangeQuantity.UseVisualStyleBackColor = true;
             this.btnChangeQuantity.Click += new System.EventHandler(this.btnChangeQuantity_Click);
             // 
