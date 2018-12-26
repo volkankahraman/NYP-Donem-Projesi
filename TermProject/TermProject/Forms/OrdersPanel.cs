@@ -36,9 +36,9 @@ namespace TermProject.Forms
                 lvOrders.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
 
             List<Order> orders = ActiveCustomer.getOrders(ActiveCustomer.Id);
-
+            List<OrderDetail> orderDetails = orders[0].OrderDetails;
             if (orders != null)
-                for (int a = 0; a < orders.Count; a++)
+                for (int a = 0; a < orderDetails.Count; a++)
                     lvOrders.Items.Add(new ListViewItem(new string[] {
                     orders[0].OrderDetails[a].Item.Name,
                     orders[0].OrderDetails[a].Quantity.ToString(),
