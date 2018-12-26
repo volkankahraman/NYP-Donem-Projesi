@@ -90,7 +90,7 @@ namespace TermProject
         }
 
 
-
+        public bool canceled = false;
         private void dataGridOrders_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dataGridOrders.SelectedCells[0].ColumnIndex == 1 && Convert.ToInt32(dataGridOrders.SelectedCells[0].Value) == 0)
@@ -101,12 +101,17 @@ namespace TermProject
                 {
                     dataGridOrders.SelectedCells[0].Value = OrderStatus.ONAYLANDI;
                 }
+                else
+                {
+                    canceled = true;
+                }
             }
+
         }
 
         private void dataGridOrders_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (dataGridOrders.SelectedCells[0].ColumnIndex != 1 || Convert.ToInt32(dataGridOrders.SelectedCells[0].Value) == 1)
+            if (dataGridOrders.SelectedCells[0].ColumnIndex != 1 || Convert.ToInt32(dataGridOrders.SelectedCells[0].Value) == 1 || canceled == true)
             {
                 e.Cancel = true;
             }

@@ -69,6 +69,7 @@ namespace TermProject
                     TaxStatus = DataSourceSingleton.GetInstance().ActiveCustomer.Cart[a].TaxStatus
                 });
             }
+            DataSourceSingleton.GetInstance().ActiveCustomer.Cart.Clear();
             this.Close();
         }
         private void Payment_Load(object sender, EventArgs e)
