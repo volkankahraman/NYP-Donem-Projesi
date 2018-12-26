@@ -14,10 +14,15 @@ namespace TermProject.Models.BankModel
 
         public static bool Authorize(Credit credit)
         {
-        //    int a = 1;
-        //    if (credit.ExpirationDate=="12/24"&& credit.Number== "1111111111111111" && credit.Type = (CreditType)(a) )
-        //    { return true; }
-            return true;
+            List<Credit> CreditCartList = DataSource.DataSourceSingleton.GetInstance().CreditCartList;
+            bool check = false;
+            for (int i = 0; i < CreditCartList.Count; i++)
+                if (credit.Number == CreditCartList[i].Number)
+                {
+                    check = true;
+                    break;
+                }
+            return check;
         }
         public static bool Authorize(Check check)
         {

@@ -96,19 +96,43 @@ namespace TermProject
             }
             if (rbCreditCard.Checked == true)
             {
-                bool CreditCardAuthorize = false;
-                Credit credit = new Credit();
-                credit.ExpirationDate = txtExpDate.Text;
-                int a = cbCreditType.SelectedIndex;
-                credit.Type = (CreditType)(a);
-                credit.Number = txtCCNumber.Text;
-                credit.Amount = Convert.ToInt32(ActiveCustomer.CalculateTotal());
-                CreditCardAuthorize = credit.Authorized();
-                payment = credit;
-                PaymentSuccess();
-            }
-
-
+                long CCNumber;
+                int expMonth, expYear;
+                MessageBox.Show(DataSourceSingleton.GetInstance().CreditCartList.Capacity.ToString());
+                if (long.TryParse(txtCCNumber.Text, out CCNumber) == true && int.TryParse(txtExpMonth.Text, out expMonth) == true && int.TryParse(txtExpYear.Text, out expYear) == true)
+                {
+                    Credit credit = new Credit();
+                    credit.Number = CCNumber;
+                    if (credit.Authorized() == true)
+                    {
+                        credit.Number = CCNumber;
+                        int a = cbCreditType.SelectedIndex;
+                        credit.ExpirationDate = expMonth + "/" + expYear;
+                        credit.Type = (CreditType)(a);
+                        credit.Amount = Convert.ToInt32(ActiveCustomer.CalculateTotal());
+                        payment = credit;
+                        PaymentSuccess();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kredi Kartı Sistemde Bulunamadı");
+                        txtCCNumber.Text = string.Empty;
+                        txtExpMonth.Text = string.Empty;
+                        txtExpYear.Text = string.Empty;
+                        cbCreditType.Text = string.Empty;
+                        txtCCNumber.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Kredi Kartı Bilgilerinizi Kontrol Ediniz.");
+                    txtCCNumber.Text = string.Empty;
+                    txtExpMonth.Text = string.Empty;
+                    txtExpYear.Text = string.Empty;
+                    cbCreditType.Text = string.Empty;
+                    txtCCNumber.Focus();
+                }
+            }            
         }
         private void Payment_Load(object sender, EventArgs e)
         {
@@ -129,7 +153,9 @@ namespace TermProject
             lblExpDate.Visible = true;
             txtCCNumber.Visible = true;
             cbCreditType.Visible = true;
-            txtExpDate.Visible = true;
+            txtExpMonth.Visible = true;
+            txtExpYear.Visible = true;
+            txtCVC.Visible = true;
 
 
             txtCheckName.Visible = false;
@@ -154,7 +180,10 @@ namespace TermProject
             lblExpDate.Visible = false;
             txtCCNumber.Visible = false;
             cbCreditType.Visible = false;
-            txtExpDate.Visible = false;
+            txtExpMonth.Visible = false;
+            txtExpYear.Visible = false;
+            txtCVC.Visible = false;
+
 
             lblCashTendered.Visible = false;
             txtCashTendered.Visible = false;
@@ -177,7 +206,9 @@ namespace TermProject
             lblExpDate.Visible = false;
             txtCCNumber.Visible = false;
             cbCreditType.Visible = false;
-            txtExpDate.Visible = false;
+            txtExpMonth.Visible = false;
+            txtExpYear.Visible = false;
+            txtCVC.Visible = false;
 
         }
 

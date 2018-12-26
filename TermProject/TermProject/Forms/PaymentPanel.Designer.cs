@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbPaymentType = new System.Windows.Forms.GroupBox();
             this.rbCheck = new System.Windows.Forms.RadioButton();
             this.rbCreditCard = new System.Windows.Forms.RadioButton();
@@ -38,7 +39,7 @@
             this.lblCCType = new System.Windows.Forms.Label();
             this.lblCashTendered = new System.Windows.Forms.Label();
             this.txtCashTendered = new System.Windows.Forms.TextBox();
-            this.txtExpDate = new System.Windows.Forms.TextBox();
+            this.txtExpMonth = new System.Windows.Forms.TextBox();
             this.txtCCNumber = new System.Windows.Forms.TextBox();
             this.lblCheckName = new System.Windows.Forms.Label();
             this.lblCheckNBR = new System.Windows.Forms.Label();
@@ -48,6 +49,10 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalWeight = new System.Windows.Forms.Label();
             this.txtCheckNBR = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtCVC = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtExpYear = new System.Windows.Forms.TextBox();
             this.gbPaymentType.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,15 +161,14 @@
             this.txtCashTendered.Name = "txtCashTendered";
             this.txtCashTendered.Size = new System.Drawing.Size(100, 20);
             this.txtCashTendered.TabIndex = 4;
-            
             // 
-            // txtExpDate
+            // txtExpMonth
             // 
-            this.txtExpDate.Location = new System.Drawing.Point(288, 185);
-            this.txtExpDate.Name = "txtExpDate";
-            this.txtExpDate.Size = new System.Drawing.Size(100, 20);
-            this.txtExpDate.TabIndex = 2;
-            this.txtExpDate.Visible = false;
+            this.txtExpMonth.Location = new System.Drawing.Point(288, 185);
+            this.txtExpMonth.Name = "txtExpMonth";
+            this.txtExpMonth.Size = new System.Drawing.Size(31, 20);
+            this.txtExpMonth.TabIndex = 2;
+            this.txtExpMonth.Visible = false;
             // 
             // txtCCNumber
             // 
@@ -248,11 +252,43 @@
             this.txtCheckNBR.TabIndex = 4;
             this.txtCheckNBR.Visible = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txtCVC
+            // 
+            this.txtCVC.Location = new System.Drawing.Point(31, 253);
+            this.txtCVC.Name = "txtCVC";
+            this.txtCVC.Size = new System.Drawing.Size(100, 20);
+            this.txtCVC.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(325, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(12, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "/";
+            // 
+            // txtExpYear
+            // 
+            this.txtExpYear.Location = new System.Drawing.Point(343, 185);
+            this.txtExpYear.Name = "txtExpYear";
+            this.txtExpYear.Size = new System.Drawing.Size(31, 20);
+            this.txtExpYear.TabIndex = 21;
+            this.txtExpYear.Visible = false;
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 456);
+            this.Controls.Add(this.txtExpYear);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtCVC);
             this.Controls.Add(this.cbCreditType);
             this.Controls.Add(this.lblCashTendered);
             this.Controls.Add(this.lblCCNumber);
@@ -261,7 +297,7 @@
             this.Controls.Add(this.lblCCType);
             this.Controls.Add(this.txtCashTendered);
             this.Controls.Add(this.lblCheckName);
-            this.Controls.Add(this.txtExpDate);
+            this.Controls.Add(this.txtExpMonth);
             this.Controls.Add(this.lblCheckNBR);
             this.Controls.Add(this.txtCCNumber);
             this.Controls.Add(this.txtCheckName);
@@ -286,7 +322,7 @@
         private System.Windows.Forms.RadioButton rbCheck;
         private System.Windows.Forms.RadioButton rbCreditCard;
         private System.Windows.Forms.RadioButton rbCash;
-        private System.Windows.Forms.TextBox txtExpDate;
+        private System.Windows.Forms.TextBox txtExpMonth;
         private System.Windows.Forms.TextBox txtCCNumber;
         private System.Windows.Forms.TextBox txtCheckName;
         private System.Windows.Forms.Button btnPay;
@@ -302,5 +338,9 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalWeight;
         private System.Windows.Forms.TextBox txtCheckNBR;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox txtCVC;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtExpYear;
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using TermProject.Enums;
 using TermProject.Models;
 using TermProject.Models.OrderModels;
+using TermProject.Models.PaymentModels;
 
 namespace TermProject.DataSource
 {
@@ -35,6 +36,7 @@ namespace TermProject.DataSource
         public List<OrderDetail> OrderDetails { get; set; }
         public Customer ActiveCustomer { get; set; }
         public Admin ActiveAdmin { get; set; }
+        public List<Credit> CreditCartList { get; private set; }
 
         private void Initialize()
         {
@@ -42,6 +44,32 @@ namespace TermProject.DataSource
             ItemList = new BindingList<Item>();
             OrderList = new List<Order>();
             OrderDetails = new List<OrderDetail>();
+            CreditCartList = new List<Credit>();
+
+            //for (long i = 4000000000000000; i < (4999999999999999 - 4000000000000000); i++)
+            //{
+            //    CreditCartList.Add(new Credit()
+            //    {
+            //        Number = i,
+            //        Type = Enums.CreditType.VISA
+            //    });
+            //}
+            //for (long i = 5100000000000000; i < (5199999999999999 - 5100000000000000); i++)
+            //{
+            //    CreditCartList.Add(new Credit()
+            //    {
+            //        Number = i,
+            //        Type = Enums.CreditType.MASTERCARD
+            //    });
+            //}
+            //for (long i = 5500000000000000; i < (5599999999999999 - 5500000000000000); i++)
+            //{
+            //    CreditCartList.Add(new Credit()
+            //    {
+            //        Number = i,
+            //        Type = Enums.CreditType.MASTERCARD
+            //    });
+            //}
 
             UserList.Add(new Admin()
             {

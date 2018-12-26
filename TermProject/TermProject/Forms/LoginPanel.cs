@@ -68,6 +68,7 @@ namespace TermProject
         private void LoginPanel_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtUserName;
+            txtUserName.Text = (3 * (4999999999999999 - 4000000000000000)).ToString();
         }
 
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)

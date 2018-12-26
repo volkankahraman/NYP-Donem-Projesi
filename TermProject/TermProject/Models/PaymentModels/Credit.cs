@@ -10,7 +10,7 @@ namespace TermProject.Models.PaymentModels
 {
     public class Credit : Payment
     {
-        public string Number { get; set; }
+        public long Number { get; set; }
         public CreditType Type { get; set; }
         public string ExpirationDate { get; set; }
 
