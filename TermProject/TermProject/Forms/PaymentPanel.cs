@@ -26,10 +26,20 @@ namespace TermProject
         Order order;
         Models.PaymentModels.Payment payment;
         Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
-        void ClearTextBox()
+        void PaymentSuccess()
         {
-
-
+            order.Payment = payment;
+            for (int a = 0; a < ActiveCustomer.Cart.Count; a++)
+            {
+                order.OrderDetails.Add(new OrderDetail()
+                {
+                    Item = ActiveCustomer.Cart[a].Item,
+                    Quantity = ActiveCustomer.Cart[a].Quantity,
+                    TaxStatus = ActiveCustomer.Cart[a].TaxStatus
+                });
+            }
+            ActiveCustomer.Cart.Clear();
+            this.Close();
         }
         private void btnPay_Click(object sender, EventArgs e)
         {
@@ -47,7 +57,7 @@ namespace TermProject
                         cash.Amount = Convert.ToInt32(ActiveCustomer.CalculateTotal());
                         payment = cash;
                         MessageBox.Show("Para Üstünüz:" + (Convert.ToInt32(txtCashTendered.Text) - Convert.ToInt32(ActiveCustomer.CalculateTotal())));
-                        this.Close();
+                        PaymentSuccess();
                     }
                     else
                     {
@@ -85,17 +95,8 @@ namespace TermProject
                 credit.Amount = Convert.ToInt32(ActiveCustomer.CalculateTotal());
                 payment = credit;
             }
-            order.Payment = payment;
-            for (int a = 0; a < ActiveCustomer.Cart.Count; a++)
-            {
-                order.OrderDetails.Add(new OrderDetail()
-                {
-                    Item = ActiveCustomer.Cart[a].Item,
-                    Quantity = ActiveCustomer.Cart[a].Quantity,
-                    TaxStatus = ActiveCustomer.Cart[a].TaxStatus
-                });
-            }
-            ActiveCustomer.Cart.Clear();
+
+
         }
         private void Payment_Load(object sender, EventArgs e)
         {
