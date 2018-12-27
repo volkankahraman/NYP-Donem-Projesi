@@ -63,7 +63,7 @@ namespace TermProject.Forms
                     cp.btnCartInfo.Text = "Sepet";
                     MessageBox.Show("Sepette Ürün Kalmadı");
                     this.Close();
-                }            
+                }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace TermProject.Forms
                 {
                     if (newQuantity != 0)
                     {
-                        if (newQuantity <= stock)
+                        if ((newQuantity + ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault().Quantity) <= stock)
                         {
                             Cart cartDetailToBeUpdated = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
                             cartDetailToBeUpdated.Quantity = newQuantity;
