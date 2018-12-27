@@ -50,7 +50,7 @@ namespace TermProject.Forms
             {
                 if (int.TryParse(txtQuantity.Text, out quantity) == true)
                 {
-                    if (quantity != 0)
+                    if (quantity != 0 && quantity > 0)
                     {
                         if (quantity <= this.Item.Stock)
                         {
@@ -64,7 +64,12 @@ namespace TermProject.Forms
                                 });
                             }
                             else
-                                ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity += quantity;
+                            {
+                                if ((ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity + quantity) <= this.Item.Stock)
+                                    ActiveCustomer.Cart.Find(x => x.Item.ID == this.Item.ID).Quantity += quantity;
+                                else
+                                    MessageBox.Show("Sepetteki Ürün Adeti Ürün Stoğunu Geçemez");
+                            }
                             this.Close();
                         }
                         else

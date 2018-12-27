@@ -100,7 +100,7 @@ namespace TermProject.Forms
                 {
                     if (newQuantity != 0)
                     {
-                        if ((newQuantity + ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault().Quantity) <= stock)
+                        if (newQuantity <= stock)
                         {
                             Cart cartDetailToBeUpdated = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
                             cartDetailToBeUpdated.Quantity = newQuantity;
