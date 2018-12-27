@@ -36,7 +36,7 @@ namespace TermProject
             lvProductList.Clear();
             lvProductList.View = View.Details;
             lvProductList.Columns.Add("Ürün İsmi", 300, HorizontalAlignment.Left);
-            lvProductList.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Right);
+            lvProductList.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Left);
             lvProductList.Columns.Add("Id", 0);
             lvProductList.FullRowSelect = true;
 
@@ -62,7 +62,7 @@ namespace TermProject
                 if (ActiveCustomer.Cart.Count > 0)
                     btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";
                 else
-                    btnCartInfo.Text = "Sepet";        
+                    btnCartInfo.Text = "Sepet";
         }
 
         private void btnCartInfo_Click(object sender, EventArgs e)
@@ -99,6 +99,17 @@ namespace TermProject
             }
             else
                 MessageBox.Show("Siparişiniz Bulunmamaktadır");
+        }
+
+        private void CustomerPanel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.C)
+                btnCartInfo_Click(this, new EventArgs());
+            else if (e.KeyCode == Keys.O)
+                btnOrders_Click(this, new EventArgs());
+            else if (e.KeyCode == Keys.Enter)
+                if (lvProductList.SelectedItems.Count > 0)
+                    lvProductList_DoubleClick(this, new EventArgs());
         }
     }
 }

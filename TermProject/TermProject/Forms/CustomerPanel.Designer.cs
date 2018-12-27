@@ -90,12 +90,14 @@
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.btnCartInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "CustomerPanel";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ürünler";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerPanel_FormClosing);
             this.Load += new System.EventHandler(this.CustomerPanel_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CustomerPanel_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

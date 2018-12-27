@@ -39,7 +39,7 @@ namespace TermProject.Forms
             lvCart.Columns.Add("Ürün İsmi", 200, HorizontalAlignment.Left);
             lvCart.Columns.Add("Ürün Adedi", -2, HorizontalAlignment.Right);
             lvCart.Columns.Add("Ürün Ağırlığı", -2, HorizontalAlignment.Right);
-            lvCart.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Right);
+            lvCart.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Left);
             lvCart.FullRowSelect = true;
 
             for (int a = 2; a < lvCart.Columns.Count; a++)
@@ -141,6 +141,16 @@ namespace TermProject.Forms
                 payment.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void CartPanel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.C)
+                btnChangeQuantity_Click(this, new EventArgs());
+            else if (e.KeyCode == Keys.R)
+                btnRemove_Click(this, new EventArgs());
+            else if (e.KeyCode == Keys.P)
+                btnPayment_Click(this, new EventArgs());
         }
     }
 }

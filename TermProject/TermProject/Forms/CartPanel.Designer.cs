@@ -83,11 +83,13 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnChangeQuantity);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "CartPanel";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sepetim";
             this.Load += new System.EventHandler(this.Cart_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CartPanel_KeyDown);
             this.ResumeLayout(false);
 
         }

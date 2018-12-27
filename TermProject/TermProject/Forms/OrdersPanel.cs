@@ -29,7 +29,7 @@ namespace TermProject.Forms
             lvOrders.Columns.Add("Ürün Adedi", -1, HorizontalAlignment.Right);
             lvOrders.Columns.Add("Ürün Ağırlığı", -1, HorizontalAlignment.Right);
             lvOrders.Columns.Add("Ürün Fiyatı", -1, HorizontalAlignment.Right);
-            lvOrders.Columns.Add("Ürün Durumu", -2, HorizontalAlignment.Right);
+            lvOrders.Columns.Add("Ürün Durumu", -2, HorizontalAlignment.Left);
 
             for (int a = 1; a <= 4; a++)
                 lvOrders.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -70,6 +70,12 @@ namespace TermProject.Forms
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void OrdersPanel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.C)
+                this.Close();
         }
     }
 }

@@ -72,10 +72,12 @@
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lvOrders);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "OrdersPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrdersPanel";
             this.Load += new System.EventHandler(this.OrdersPanel_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OrdersPanel_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
