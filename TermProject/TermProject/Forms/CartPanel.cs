@@ -18,6 +18,7 @@ namespace TermProject.Forms
         public CartPanel()
         {
             InitializeComponent();
+            this.ActiveControl = lvCart;
         }
 
         BindingList<Item> ItemList = DataSourceSingleton.GetInstance().ItemList;
@@ -27,6 +28,7 @@ namespace TermProject.Forms
         private void Cart_Load(object sender, EventArgs e)
         {
             UpdateList();
+            this.ActiveControl = btnPayment;
         }
 
         public void UpdateList()
@@ -34,13 +36,13 @@ namespace TermProject.Forms
             lvCart.Clear();
             lvCart.View = View.Details;
             lvCart.Columns.Add("Ürün Id", 0);
-            lvCart.Columns.Add("Ürün İsmi", -2, HorizontalAlignment.Left);
-            lvCart.Columns.Add("Ürün Adedi", -2, HorizontalAlignment.Left);
-            lvCart.Columns.Add("Ürün Ağırlığı", -2, HorizontalAlignment.Left);
-            lvCart.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Left);
+            lvCart.Columns.Add("Ürün İsmi", 200, HorizontalAlignment.Left);
+            lvCart.Columns.Add("Ürün Adedi", -2, HorizontalAlignment.Right);
+            lvCart.Columns.Add("Ürün Ağırlığı", -2, HorizontalAlignment.Right);
+            lvCart.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Right);
             lvCart.FullRowSelect = true;
 
-            for (int a = 1; a < lvCart.Columns.Count; a++)
+            for (int a = 2; a < lvCart.Columns.Count; a++)
                 lvCart.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
 
             if (ActiveCustomer.Cart != null)
@@ -61,7 +63,7 @@ namespace TermProject.Forms
                     cp.btnCartInfo.Text = "Sepet";
                     MessageBox.Show("Sepette Ürün Kalmadı");
                     this.Close();
-                }
+                }            
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -77,7 +79,10 @@ namespace TermProject.Forms
                     Cart cartDetailToBeRemoved = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
                     ActiveCustomer.Cart.Remove(cartDetailToBeRemoved);
                     if (ActiveCustomer.Cart.Count == 0)
+                    {
+                        MessageBox.Show("Sepette Ürün Kalmadı");
                         this.Close();
+                    }
                 }
                 UpdateList();
             }
@@ -114,7 +119,10 @@ namespace TermProject.Forms
                             Cart cartDetailToBeRemoved = ActiveCustomer.Cart.Where(x => x.Item.ID == id).FirstOrDefault();
                             ActiveCustomer.Cart.Remove(cartDetailToBeRemoved);
                             if (ActiveCustomer.Cart.Count == 0)
+                            {
+                                MessageBox.Show("Sepette Ürün Kalmadı");
                                 this.Close();
+                            }
                         }
                     }
                 }

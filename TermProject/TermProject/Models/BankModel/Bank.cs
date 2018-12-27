@@ -14,16 +14,15 @@ namespace TermProject.Models.BankModel
 
         public static bool Authorize(Credit credit)
         {
-            List<Credit> CreditCartList = DataSource.DataSourceSingleton.GetInstance().CreditCartList;
-            bool check = false;
-            for (int i = 0; i < CreditCartList.Count; i++)
-                if (credit.Number == CreditCartList[i].Number)
-                {
-                    check = true;
-                    break;
-                }
-            return check;
+            char[] number = credit.Number.ToString().ToCharArray();
+
+            if (int.Parse(number[0].ToString()) == 4 && credit.Type == Enums.CreditType.VISA)
+                return true;
+            else if (int.Parse(number[0].ToString()) == 5 && credit.Type == Enums.CreditType.MASTERCARD)
+                return true;
+            return false;
         }
+
         public static bool Authorize(Check check)
         {
             return true;

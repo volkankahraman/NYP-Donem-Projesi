@@ -142,6 +142,7 @@
             this.Controls.Add(this.btnAddToCart);
             this.Name = "AddToCartPanel";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.AddToCartPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbProductPicture)).EndInit();
             this.ResumeLayout(false);

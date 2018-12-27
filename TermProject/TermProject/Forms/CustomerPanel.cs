@@ -27,33 +27,42 @@ namespace TermProject
         {
             lblCustomerName.Text = "Merhaba " + ActiveCustomer.Name;
             UpdateList();
+            this.ActiveControl = lvProductList;
+            lvProductList.Items[0].Selected = true;
         }
 
         public void UpdateList()
         {
             lvProductList.Clear();
             lvProductList.View = View.Details;
+            lvProductList.Columns.Add("Ürün İsmi", 300, HorizontalAlignment.Left);
+            lvProductList.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Right);
             lvProductList.Columns.Add("Id", 0);
-            lvProductList.Columns.Add("Ürün İsmi", -2, HorizontalAlignment.Left);
-            lvProductList.Columns.Add("Ürün Fiyatı", -2, HorizontalAlignment.Left);
             lvProductList.FullRowSelect = true;
 
-            for (int a = 1; a < lvProductList.Columns.Count; a++)
-                lvProductList.AutoResizeColumn(a, ColumnHeaderAutoResizeStyle.HeaderSize);
+            ImageList imageList = new ImageList();
+            imageList.ImageSize = new Size(50, 50);
+
+            for (int a = 0; a < ItemList.Count; a++)
+                if (ItemList[a].Stock > 0)
+                    imageList.Images.Add(ItemList[a].ID.ToString(), ItemList[a].Picture);
+
+            lvProductList.SmallImageList = imageList;
 
             for (int a = 0; a < ItemList.Count; a++)
                 if (ItemList[a].Stock > 0)
                     lvProductList.Items.Add(new ListViewItem(new string[] {
-                        ItemList[a].ID.ToString(),
                         ItemList[a].Name,
-                        ItemList[a].Price.ToString() + "₺"
-                    }));
+                        ItemList[a].Price.ToString() + "₺",
+                        ItemList[a].ID.ToString()
+                    })
+                    { ImageKey = ItemList[a].ID.ToString() });
 
             if (ActiveCustomer.Cart != null)
                 if (ActiveCustomer.Cart.Count > 0)
                     btnCartInfo.Text = "Sepet (" + ActiveCustomer.Cart.Count + ")";
                 else
-                    btnCartInfo.Text = "Sepet";
+                    btnCartInfo.Text = "Sepet";        
         }
 
         private void btnCartInfo_Click(object sender, EventArgs e)
@@ -75,7 +84,7 @@ namespace TermProject
 
         private void lvProductList_DoubleClick(object sender, EventArgs e)
         {
-            int id = Convert.ToInt16(lvProductList.SelectedItems[0].SubItems[0].Text);
+            int id = Convert.ToInt16(lvProductList.SelectedItems[0].SubItems[2].Text);
             Item itemTobeAddedToCart = ItemList.Where(x => x.ID == id).FirstOrDefault();
             AddToCartPanel addToCartPanel = new AddToCartPanel(itemTobeAddedToCart);
             addToCartPanel.ShowDialog();
@@ -83,8 +92,13 @@ namespace TermProject
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            OrdersPanel op = new OrdersPanel();
-            op.ShowDialog();
+            if (ActiveCustomer.getOrders(ActiveCustomer.Id).Count != 0)
+            {
+                OrdersPanel op = new OrdersPanel();
+                op.ShowDialog();
+            }
+            else
+                MessageBox.Show("Siparişiniz Bulunmamaktadır");
         }
     }
 }

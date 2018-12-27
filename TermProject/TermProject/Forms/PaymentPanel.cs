@@ -17,16 +17,16 @@ namespace TermProject
 {
     public partial class Payment : Form
     {
-
         public Payment()
         {
             InitializeComponent();
-
         }
+
         Order order;
         Models.PaymentModels.Payment payment;
         Customer ActiveCustomer = DataSourceSingleton.GetInstance().ActiveCustomer;
         BindingList<Item> ItemList = DataSourceSingleton.GetInstance().ItemList;
+        List<OrderDetail> orderDetails = new List<OrderDetail>();
         CustomerPanel cp = (CustomerPanel)Application.OpenForms["CustomerPanel"];
 
         void PaymentSuccess()
@@ -42,6 +42,7 @@ namespace TermProject
                 });
                 ItemList.Where(x => x.ID == ActiveCustomer.Cart[a].Item.ID).FirstOrDefault().Stock -= ActiveCustomer.Cart[a].Quantity;
             }
+            DataSourceSingleton.GetInstance().OrderList.Add(order);
             ActiveCustomer.Cart.Clear();
             if (ActiveCustomer.Cart != null)
                 if (ActiveCustomer.Cart.Count > 0)
@@ -51,13 +52,16 @@ namespace TermProject
             cp.UpdateList();
             this.Close();
         }
+
         private void btnPay_Click(object sender, EventArgs e)
         {
-            string _CashTendered = txtCashTendered.Text;
-            int CashTendered;
-
+            order = new Order(orderDetails);
+            order.Date = DateTime.Now;
+            order.Customer = ActiveCustomer;
             if (rbCash.Checked == true)
             {
+                string _CashTendered = txtCashTendered.Text;
+                int CashTendered;
                 if (int.TryParse(_CashTendered, out CashTendered) == true)
                 {
                     if (CashTendered - Convert.ToInt32(ActiveCustomer.CalculateTotal()) >= 0)
@@ -98,7 +102,6 @@ namespace TermProject
             {
                 long CCNumber;
                 int expMonth, expYear;
-                MessageBox.Show(DataSourceSingleton.GetInstance().CreditCartList.Capacity.ToString());
                 if (long.TryParse(txtCCNumber.Text, out CCNumber) == true && int.TryParse(txtExpMonth.Text, out expMonth) == true && int.TryParse(txtExpYear.Text, out expYear) == true)
                 {
                     Credit credit = new Credit();
@@ -132,86 +135,51 @@ namespace TermProject
                     cbCreditType.Text = string.Empty;
                     txtCCNumber.Focus();
                 }
-            }            
+            }
         }
+
         private void Payment_Load(object sender, EventArgs e)
         {
-            order = new Order(DataSourceSingleton.GetInstance().OrderDetails);
-            order.Date = DateTime.Now;
-            order.Customer = ActiveCustomer;
-            DataSourceSingleton.GetInstance().OrderList.Add(order);
-            lblTotal.Text = "Toplam tutar:" + ActiveCustomer.CalculateTotal();
-            lblTotalWeight.Text = "Toplam ağırlık:" + ActiveCustomer.CalculateWeight();
-            lblTotalTax.Text = "Toplam Vergi:" + ActiveCustomer.CalculateTax();
+            this.Size = new Size(450, 150);
+            lblTotal.Text = "Toplam Tutar  : " + ActiveCustomer.CalculateTotal() + " ₺";
+            lblTotalWeight.Text = "Toplam Ağırlık : " + ActiveCustomer.CalculateWeight() + " KG";
+            lblTotalTax.Text = "Toplam Vergi  : " + ActiveCustomer.CalculateTax() + " ₺";
         }
+
         private void rbCreditCard_CheckedChanged(object sender, EventArgs e)
         {
+            this.Size = new Size(450, 311);
+            gbCredit.Location = new Point(12, 110);
+            btnPay.Location = new Point(347, 242);
+            gbCredit.Visible = true;
+            gbCash.Visible = false;
+            gbCheck.Visible = false;
             btnPay.Visible = true;
-
-            lblCCNumber.Visible = true;
-            lblCCType.Visible = true;
-            lblExpDate.Visible = true;
-            txtCCNumber.Visible = true;
-            cbCreditType.Visible = true;
-            txtExpMonth.Visible = true;
-            txtExpYear.Visible = true;
-            txtCVC.Visible = true;
-
-
-            txtCheckName.Visible = false;
-            txtCheckNBR.Visible = false;
-            lblCheckName.Visible = false;
-            lblCheckNBR.Visible = false;
-
-            lblCashTendered.Visible = false;
-            txtCashTendered.Visible = false;
+            txtCCNumber.Focus();
         }
+
         private void rbCheck_CheckedChanged(object sender, EventArgs e)
         {
+            this.Size = new Size(450, 261);
+            gbCheck.Location = new Point(12, 110);
+            btnPay.Location = new Point(347, 192);
+            gbCredit.Visible = false;
+            gbCash.Visible = false;
+            gbCheck.Visible = true;
             btnPay.Visible = true;
-
-            txtCheckNBR.Visible = true;
-            lblCheckName.Visible = true;
-            lblCheckNBR.Visible = true;
-            txtCheckName.Visible = true;
-
-            lblCCNumber.Visible = false;
-            lblCCType.Visible = false;
-            lblExpDate.Visible = false;
-            txtCCNumber.Visible = false;
-            cbCreditType.Visible = false;
-            txtExpMonth.Visible = false;
-            txtExpYear.Visible = false;
-            txtCVC.Visible = false;
-
-
-            lblCashTendered.Visible = false;
-            txtCashTendered.Visible = false;
-
+            txtCheckName.Focus();
         }
+
         private void rbCash_CheckedChanged(object sender, EventArgs e)
         {
-            lblCashTendered.Visible = true;
-            txtCashTendered.Visible = true;
+            this.Size = new Size(450, 240);
+            gbCash.Location = new Point(12, 110);
+            btnPay.Location = new Point(347, 171);
+            gbCredit.Visible = false;
+            gbCash.Visible = true;
+            gbCheck.Visible = false;
             btnPay.Visible = true;
-
-            txtCheckName.Visible = false;
-            txtCheckNBR.Visible = false;
-            lblCheckName.Visible = false;
-            lblCheckNBR.Visible = false;
-
-
-            lblCCNumber.Visible = false;
-            lblCCType.Visible = false;
-            lblExpDate.Visible = false;
-            txtCCNumber.Visible = false;
-            cbCreditType.Visible = false;
-            txtExpMonth.Visible = false;
-            txtExpYear.Visible = false;
-            txtCVC.Visible = false;
-
+            txtCashTendered.Focus();
         }
-
-
     }
 }

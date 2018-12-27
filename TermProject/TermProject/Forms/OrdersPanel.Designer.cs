@@ -35,6 +35,7 @@
             // 
             // lvOrders
             // 
+            this.lvOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lvOrders.Location = new System.Drawing.Point(5, 37);
             this.lvOrders.Name = "lvOrders";
             this.lvOrders.Size = new System.Drawing.Size(800, 391);

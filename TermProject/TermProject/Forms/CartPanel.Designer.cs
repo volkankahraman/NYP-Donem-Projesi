@@ -66,6 +66,7 @@
             // 
             // lvCart
             // 
+            this.lvCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lvCart.Location = new System.Drawing.Point(12, 12);
             this.lvCart.Name = "lvCart";
             this.lvCart.Size = new System.Drawing.Size(606, 197);
@@ -84,6 +85,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CartPanel";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sepetim";
             this.Load += new System.EventHandler(this.Cart_Load);
             this.ResumeLayout(false);

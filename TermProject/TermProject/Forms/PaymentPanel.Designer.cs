@@ -53,7 +53,14 @@
             this.txtCVC = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtExpYear = new System.Windows.Forms.TextBox();
+            this.gbCash = new System.Windows.Forms.GroupBox();
+            this.gbCheck = new System.Windows.Forms.GroupBox();
+            this.gbCredit = new System.Windows.Forms.GroupBox();
+            this.lblCVC = new System.Windows.Forms.Label();
             this.gbPaymentType.SuspendLayout();
+            this.gbCash.SuspendLayout();
+            this.gbCheck.SuspendLayout();
+            this.gbCredit.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbPaymentType
@@ -61,9 +68,9 @@
             this.gbPaymentType.Controls.Add(this.rbCheck);
             this.gbPaymentType.Controls.Add(this.rbCreditCard);
             this.gbPaymentType.Controls.Add(this.rbCash);
-            this.gbPaymentType.Location = new System.Drawing.Point(12, 12);
+            this.gbPaymentType.Location = new System.Drawing.Point(322, 12);
             this.gbPaymentType.Name = "gbPaymentType";
-            this.gbPaymentType.Size = new System.Drawing.Size(410, 80);
+            this.gbPaymentType.Size = new System.Drawing.Size(100, 92);
             this.gbPaymentType.TabIndex = 0;
             this.gbPaymentType.TabStop = false;
             this.gbPaymentType.Text = "Ödeme Yöntemi";
@@ -71,11 +78,10 @@
             // rbCheck
             // 
             this.rbCheck.AutoSize = true;
-            this.rbCheck.Location = new System.Drawing.Point(276, 32);
+            this.rbCheck.Location = new System.Drawing.Point(6, 65);
             this.rbCheck.Name = "rbCheck";
             this.rbCheck.Size = new System.Drawing.Size(44, 17);
             this.rbCheck.TabIndex = 2;
-            this.rbCheck.TabStop = true;
             this.rbCheck.Text = "Çek";
             this.rbCheck.UseVisualStyleBackColor = true;
             this.rbCheck.CheckedChanged += new System.EventHandler(this.rbCheck_CheckedChanged);
@@ -83,11 +89,10 @@
             // rbCreditCard
             // 
             this.rbCreditCard.AutoSize = true;
-            this.rbCreditCard.Location = new System.Drawing.Point(122, 32);
+            this.rbCreditCard.Location = new System.Drawing.Point(6, 42);
             this.rbCreditCard.Name = "rbCreditCard";
             this.rbCreditCard.Size = new System.Drawing.Size(72, 17);
             this.rbCreditCard.TabIndex = 1;
-            this.rbCreditCard.TabStop = true;
             this.rbCreditCard.Text = "Kredi kartı";
             this.rbCreditCard.UseVisualStyleBackColor = true;
             this.rbCreditCard.CheckedChanged += new System.EventHandler(this.rbCreditCard_CheckedChanged);
@@ -95,11 +100,10 @@
             // rbCash
             // 
             this.rbCash.AutoSize = true;
-            this.rbCash.Location = new System.Drawing.Point(6, 32);
+            this.rbCash.Location = new System.Drawing.Point(6, 19);
             this.rbCash.Name = "rbCash";
             this.rbCash.Size = new System.Drawing.Size(50, 17);
             this.rbCash.TabIndex = 0;
-            this.rbCash.TabStop = true;
             this.rbCash.Text = "Nakit";
             this.rbCash.UseVisualStyleBackColor = true;
             this.rbCash.CheckedChanged += new System.EventHandler(this.rbCash_CheckedChanged);
@@ -110,46 +114,42 @@
             this.cbCreditType.Items.AddRange(new object[] {
             "MasterCard",
             "Visa"});
-            this.cbCreditType.Location = new System.Drawing.Point(158, 185);
+            this.cbCreditType.Location = new System.Drawing.Point(203, 45);
             this.cbCreditType.Name = "cbCreditType";
             this.cbCreditType.Size = new System.Drawing.Size(121, 21);
-            this.cbCreditType.TabIndex = 13;
-            this.cbCreditType.Visible = false;
+            this.cbCreditType.TabIndex = 1;
             // 
             // lblCCNumber
             // 
             this.lblCCNumber.AutoSize = true;
-            this.lblCCNumber.Location = new System.Drawing.Point(29, 169);
+            this.lblCCNumber.Location = new System.Drawing.Point(95, 22);
             this.lblCCNumber.Name = "lblCCNumber";
-            this.lblCCNumber.Size = new System.Drawing.Size(99, 13);
+            this.lblCCNumber.Size = new System.Drawing.Size(102, 13);
             this.lblCCNumber.TabIndex = 12;
-            this.lblCCNumber.Text = "Kredi kartı numarası";
-            this.lblCCNumber.Visible = false;
+            this.lblCCNumber.Text = "Kredi Kartı Numarası";
             // 
             // lblExpDate
             // 
             this.lblExpDate.AutoSize = true;
-            this.lblExpDate.Location = new System.Drawing.Point(285, 169);
+            this.lblExpDate.Location = new System.Drawing.Point(59, 75);
             this.lblExpDate.Name = "lblExpDate";
-            this.lblExpDate.Size = new System.Drawing.Size(96, 13);
+            this.lblExpDate.Size = new System.Drawing.Size(138, 13);
             this.lblExpDate.TabIndex = 7;
-            this.lblExpDate.Text = "Son kullanma tarihi";
-            this.lblExpDate.Visible = false;
+            this.lblExpDate.Text = "Son Kullanma Tarihi (Ay/Yıl)";
             // 
             // lblCCType
             // 
             this.lblCCType.AutoSize = true;
-            this.lblCCType.Location = new System.Drawing.Point(155, 170);
+            this.lblCCType.Location = new System.Drawing.Point(122, 48);
             this.lblCCType.Name = "lblCCType";
             this.lblCCType.Size = new System.Drawing.Size(75, 13);
             this.lblCCType.TabIndex = 9;
             this.lblCCType.Text = "Kredi Kartı Tipi";
-            this.lblCCType.Visible = false;
             // 
             // lblCashTendered
             // 
             this.lblCashTendered.AutoSize = true;
-            this.lblCashTendered.Location = new System.Drawing.Point(30, 169);
+            this.lblCashTendered.Location = new System.Drawing.Point(105, 22);
             this.lblCashTendered.Name = "lblCashTendered";
             this.lblCashTendered.Size = new System.Drawing.Size(66, 13);
             this.lblCashTendered.TabIndex = 5;
@@ -157,58 +157,53 @@
             // 
             // txtCashTendered
             // 
-            this.txtCashTendered.Location = new System.Drawing.Point(32, 186);
+            this.txtCashTendered.Location = new System.Drawing.Point(177, 19);
             this.txtCashTendered.Name = "txtCashTendered";
-            this.txtCashTendered.Size = new System.Drawing.Size(100, 20);
-            this.txtCashTendered.TabIndex = 4;
+            this.txtCashTendered.Size = new System.Drawing.Size(121, 20);
+            this.txtCashTendered.TabIndex = 0;
             // 
             // txtExpMonth
             // 
-            this.txtExpMonth.Location = new System.Drawing.Point(288, 185);
+            this.txtExpMonth.Location = new System.Drawing.Point(203, 72);
             this.txtExpMonth.Name = "txtExpMonth";
-            this.txtExpMonth.Size = new System.Drawing.Size(31, 20);
+            this.txtExpMonth.Size = new System.Drawing.Size(45, 20);
             this.txtExpMonth.TabIndex = 2;
-            this.txtExpMonth.Visible = false;
             // 
             // txtCCNumber
             // 
-            this.txtCCNumber.Location = new System.Drawing.Point(32, 185);
+            this.txtCCNumber.Location = new System.Drawing.Point(203, 19);
             this.txtCCNumber.Name = "txtCCNumber";
-            this.txtCCNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtCCNumber.TabIndex = 3;
-            this.txtCCNumber.Visible = false;
+            this.txtCCNumber.Size = new System.Drawing.Size(121, 20);
+            this.txtCCNumber.TabIndex = 0;
             // 
             // lblCheckName
             // 
             this.lblCheckName.AutoSize = true;
-            this.lblCheckName.Location = new System.Drawing.Point(30, 169);
+            this.lblCheckName.Location = new System.Drawing.Point(146, 22);
             this.lblCheckName.Name = "lblCheckName";
             this.lblCheckName.Size = new System.Drawing.Size(25, 13);
             this.lblCheckName.TabIndex = 13;
             this.lblCheckName.Text = "İsim";
-            this.lblCheckName.Visible = false;
             // 
             // lblCheckNBR
             // 
             this.lblCheckNBR.AutoSize = true;
-            this.lblCheckNBR.Location = new System.Drawing.Point(155, 170);
+            this.lblCheckNBR.Location = new System.Drawing.Point(98, 48);
             this.lblCheckNBR.Name = "lblCheckNBR";
-            this.lblCheckNBR.Size = new System.Drawing.Size(71, 13);
+            this.lblCheckNBR.Size = new System.Drawing.Size(73, 13);
             this.lblCheckNBR.TabIndex = 15;
-            this.lblCheckNBR.Text = "Çek numarası";
-            this.lblCheckNBR.Visible = false;
+            this.lblCheckNBR.Text = "Çek Numarası";
             // 
             // txtCheckName
             // 
-            this.txtCheckName.Location = new System.Drawing.Point(32, 186);
+            this.txtCheckName.Location = new System.Drawing.Point(177, 19);
             this.txtCheckName.Name = "txtCheckName";
-            this.txtCheckName.Size = new System.Drawing.Size(100, 20);
+            this.txtCheckName.Size = new System.Drawing.Size(121, 20);
             this.txtCheckName.TabIndex = 0;
-            this.txtCheckName.Visible = false;
             // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(347, 406);
+            this.btnPay.Location = new System.Drawing.Point(347, 385);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(75, 23);
             this.btnPay.TabIndex = 0;
@@ -220,37 +215,39 @@
             // lblTotalTax
             // 
             this.lblTotalTax.AutoSize = true;
-            this.lblTotalTax.Location = new System.Drawing.Point(135, 115);
+            this.lblTotalTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotalTax.Location = new System.Drawing.Point(12, 51);
             this.lblTotalTax.Name = "lblTotalTax";
-            this.lblTotalTax.Size = new System.Drawing.Size(72, 13);
+            this.lblTotalTax.Size = new System.Drawing.Size(102, 20);
             this.lblTotalTax.TabIndex = 16;
-            this.lblTotalTax.Text = "Toplam Vergi:";
+            this.lblTotalTax.Text = "Toplam Vergi";
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(30, 115);
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotal.Location = new System.Drawing.Point(12, 28);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(72, 13);
+            this.lblTotal.Size = new System.Drawing.Size(102, 20);
             this.lblTotal.TabIndex = 17;
-            this.lblTotal.Text = "Toplam tutar :";
+            this.lblTotal.Text = "Toplam Tutar";
             // 
             // lblTotalWeight
             // 
             this.lblTotalWeight.AutoSize = true;
-            this.lblTotalWeight.Location = new System.Drawing.Point(261, 115);
+            this.lblTotalWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotalWeight.Location = new System.Drawing.Point(12, 74);
             this.lblTotalWeight.Name = "lblTotalWeight";
-            this.lblTotalWeight.Size = new System.Drawing.Size(75, 13);
+            this.lblTotalWeight.Size = new System.Drawing.Size(107, 20);
             this.lblTotalWeight.TabIndex = 16;
-            this.lblTotalWeight.Text = "Toplam ağırlık:";
+            this.lblTotalWeight.Text = "Toplam Ağırlık";
             // 
             // txtCheckNBR
             // 
-            this.txtCheckNBR.Location = new System.Drawing.Point(158, 186);
+            this.txtCheckNBR.Location = new System.Drawing.Point(177, 45);
             this.txtCheckNBR.Name = "txtCheckNBR";
-            this.txtCheckNBR.Size = new System.Drawing.Size(100, 20);
-            this.txtCheckNBR.TabIndex = 4;
-            this.txtCheckNBR.Visible = false;
+            this.txtCheckNBR.Size = new System.Drawing.Size(121, 20);
+            this.txtCheckNBR.TabIndex = 1;
             // 
             // contextMenuStrip1
             // 
@@ -259,15 +256,15 @@
             // 
             // txtCVC
             // 
-            this.txtCVC.Location = new System.Drawing.Point(31, 253);
+            this.txtCVC.Location = new System.Drawing.Point(203, 98);
             this.txtCVC.Name = "txtCVC";
-            this.txtCVC.Size = new System.Drawing.Size(100, 20);
-            this.txtCVC.TabIndex = 19;
+            this.txtCVC.Size = new System.Drawing.Size(121, 20);
+            this.txtCVC.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(325, 189);
+            this.label1.Location = new System.Drawing.Point(258, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(12, 13);
             this.label1.TabIndex = 20;
@@ -275,42 +272,93 @@
             // 
             // txtExpYear
             // 
-            this.txtExpYear.Location = new System.Drawing.Point(343, 185);
+            this.txtExpYear.Location = new System.Drawing.Point(279, 72);
             this.txtExpYear.Name = "txtExpYear";
-            this.txtExpYear.Size = new System.Drawing.Size(31, 20);
-            this.txtExpYear.TabIndex = 21;
-            this.txtExpYear.Visible = false;
+            this.txtExpYear.Size = new System.Drawing.Size(45, 20);
+            this.txtExpYear.TabIndex = 3;
+            // 
+            // gbCash
+            // 
+            this.gbCash.Controls.Add(this.lblCashTendered);
+            this.gbCash.Controls.Add(this.txtCashTendered);
+            this.gbCash.Location = new System.Drawing.Point(12, 110);
+            this.gbCash.Name = "gbCash";
+            this.gbCash.Size = new System.Drawing.Size(410, 55);
+            this.gbCash.TabIndex = 3;
+            this.gbCash.TabStop = false;
+            this.gbCash.Text = "Nakit";
+            this.gbCash.Visible = false;
+            // 
+            // gbCheck
+            // 
+            this.gbCheck.Controls.Add(this.lblCheckName);
+            this.gbCheck.Controls.Add(this.txtCheckName);
+            this.gbCheck.Controls.Add(this.lblCheckNBR);
+            this.gbCheck.Controls.Add(this.txtCheckNBR);
+            this.gbCheck.Location = new System.Drawing.Point(12, 171);
+            this.gbCheck.Name = "gbCheck";
+            this.gbCheck.Size = new System.Drawing.Size(410, 76);
+            this.gbCheck.TabIndex = 4;
+            this.gbCheck.TabStop = false;
+            this.gbCheck.Text = "Çek Bilgileri";
+            this.gbCheck.Visible = false;
+            // 
+            // gbCredit
+            // 
+            this.gbCredit.Controls.Add(this.lblCVC);
+            this.gbCredit.Controls.Add(this.lblExpDate);
+            this.gbCredit.Controls.Add(this.txtCCNumber);
+            this.gbCredit.Controls.Add(this.txtExpMonth);
+            this.gbCredit.Controls.Add(this.lblCCType);
+            this.gbCredit.Controls.Add(this.txtExpYear);
+            this.gbCredit.Controls.Add(this.lblCCNumber);
+            this.gbCredit.Controls.Add(this.label1);
+            this.gbCredit.Controls.Add(this.cbCreditType);
+            this.gbCredit.Controls.Add(this.txtCVC);
+            this.gbCredit.Location = new System.Drawing.Point(12, 253);
+            this.gbCredit.Name = "gbCredit";
+            this.gbCredit.Size = new System.Drawing.Size(410, 126);
+            this.gbCredit.TabIndex = 4;
+            this.gbCredit.TabStop = false;
+            this.gbCredit.Text = "Kredi Kartı Bilgileri";
+            this.gbCredit.Visible = false;
+            // 
+            // lblCVC
+            // 
+            this.lblCVC.AutoSize = true;
+            this.lblCVC.Location = new System.Drawing.Point(169, 101);
+            this.lblCVC.Name = "lblCVC";
+            this.lblCVC.Size = new System.Drawing.Size(28, 13);
+            this.lblCVC.TabIndex = 22;
+            this.lblCVC.Text = "CVC";
             // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 456);
-            this.Controls.Add(this.txtExpYear);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCVC);
-            this.Controls.Add(this.cbCreditType);
-            this.Controls.Add(this.lblCashTendered);
-            this.Controls.Add(this.lblCCNumber);
-            this.Controls.Add(this.lblExpDate);
-            this.Controls.Add(this.txtCheckNBR);
-            this.Controls.Add(this.lblCCType);
-            this.Controls.Add(this.txtCashTendered);
-            this.Controls.Add(this.lblCheckName);
-            this.Controls.Add(this.txtExpMonth);
-            this.Controls.Add(this.lblCheckNBR);
-            this.Controls.Add(this.txtCCNumber);
-            this.Controls.Add(this.txtCheckName);
+            this.ClientSize = new System.Drawing.Size(434, 419);
+            this.Controls.Add(this.gbCheck);
+            this.Controls.Add(this.gbCredit);
+            this.Controls.Add(this.gbCash);
+            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.lblTotalWeight);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTotalTax);
-            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.gbPaymentType);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Payment";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment";
             this.Load += new System.EventHandler(this.Payment_Load);
             this.gbPaymentType.ResumeLayout(false);
             this.gbPaymentType.PerformLayout();
+            this.gbCash.ResumeLayout(false);
+            this.gbCash.PerformLayout();
+            this.gbCheck.ResumeLayout(false);
+            this.gbCheck.PerformLayout();
+            this.gbCredit.ResumeLayout(false);
+            this.gbCredit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,5 +390,9 @@
         private System.Windows.Forms.TextBox txtCVC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtExpYear;
+        private System.Windows.Forms.GroupBox gbCash;
+        private System.Windows.Forms.GroupBox gbCheck;
+        private System.Windows.Forms.GroupBox gbCredit;
+        private System.Windows.Forms.Label lblCVC;
     }
 }

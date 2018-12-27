@@ -8,8 +8,7 @@ namespace TermProject.Enums
 {
     public enum CreditType
     {
-        MASTERCARD = 0,
-        VISA = 1
-        
+        VISA = 0,
+        MASTERCARD = 1        
     }
 }
