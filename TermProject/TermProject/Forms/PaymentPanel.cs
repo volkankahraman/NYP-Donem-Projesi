@@ -130,6 +130,7 @@ namespace TermProject
                         txtCCNumber.Text = string.Empty;
                         txtExpMonth.Text = string.Empty;
                         txtExpYear.Text = string.Empty;
+                        txtCVC.Text= string.Empty;
                         cbCreditType.Text = string.Empty;
                         txtCCNumber.Focus();
                     }
