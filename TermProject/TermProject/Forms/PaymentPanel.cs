@@ -56,6 +56,8 @@ namespace TermProject
                 else
                     cp.btnCartInfo.Text = "Sepet";
             cp.UpdateList();
+            Forms.OrdersPanel ordersPanel = new Forms.OrdersPanel();
+            ordersPanel.ShowDialog();
             this.Close();
         }
 
