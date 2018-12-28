@@ -43,6 +43,12 @@ namespace TermProject
                 ItemList.Where(x => x.ID == ActiveCustomer.Cart[a].Item.ID).FirstOrDefault().Stock -= ActiveCustomer.Cart[a].Quantity;
             }
             DataSourceSingleton.GetInstance().OrderList.Add(order);
+
+            string list = "";
+            for (int a = 0; a < order.OrderDetails.Count; a++)
+                list += order.OrderDetails[a].Item.Name + Environment.NewLine;
+            order.OrderList = list;
+
             ActiveCustomer.Cart.Clear();
             if (ActiveCustomer.Cart != null)
                 if (ActiveCustomer.Cart.Count > 0)

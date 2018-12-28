@@ -19,12 +19,6 @@ namespace TermProject.Models.OrderModels
         public Customer Customer { get; set; }
         public PaymentModels.Payment Payment { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
-        public string getOrderList()
-        {
-            string text = "";
-            for (int a = 0; a < OrderDetails.Count; a++)
-                text += OrderDetails[a].Item.Name + "\n";
-            return text;
-        }
+        public string OrderList { get; set; }
     }
 }
