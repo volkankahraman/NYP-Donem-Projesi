@@ -174,7 +174,7 @@
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(142, 21);
             this.btnLoad.TabIndex = 14;
-            this.btnLoad.Text = "Ekle";
+            this.btnLoad.Text = "Resim Ekle";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
