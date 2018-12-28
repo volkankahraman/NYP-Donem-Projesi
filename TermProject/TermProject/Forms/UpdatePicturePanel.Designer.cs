@@ -67,7 +67,7 @@
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.pictureItem);
             this.Name = "UpdatePicturePanel";
-            this.Text = "UpdatePicturePanel";
+            this.Text = "Resmi Güncelle";
             this.Load += new System.EventHandler(this.UpdatePicturePanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureItem)).EndInit();
             this.ResumeLayout(false);

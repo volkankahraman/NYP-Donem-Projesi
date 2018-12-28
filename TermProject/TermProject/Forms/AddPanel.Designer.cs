@@ -221,7 +221,7 @@
             this.Controls.Add(this.lblTax);
             this.Controls.Add(this.lblID);
             this.Name = "AddPanel";
-            this.Text = "AddPanel";
+            this.Text = "Ürün Ekle";
             this.Load += new System.EventHandler(this.AddPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productPicture)).EndInit();
             this.ResumeLayout(false);
