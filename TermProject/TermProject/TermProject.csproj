@@ -178,6 +178,11 @@
   <ItemGroup>
     <None Include="Resources\lgtv.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\9816549425202.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9863517470770.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -45,66 +45,57 @@ namespace TermProject.DataSource
             UserList.Add(new Admin()
             {
                 UserType = UserType.ADMIN,
-                Username = "1",
-                Password = "1"
+                Username = "volkankahraman",
+                Password = "admin"
             });
             UserList.Add(new Customer()
             {
                 UserType = UserType.CUSTOMER,
-                Username = "maho",
-                Password = "123"
+                Username = "ulasgokce",
+                Password = "ulas123",
+                Name = "Ulaş Gökçe",
+                Address = "1671 sokak Tersane Mah. Karşıyaka / İzmir"
             });
             UserList.Add(new Customer()
             {
                 Id = 0,
                 UserType = UserType.CUSTOMER,
-                Username = "123",
-                Password = "123",
-                Name = "Deniz Gökçe",
-                Address = "Izmir"
+                Username = "ardanuc",
+                Password = "ardanuc123",
+                Name = "Ardanuc Akar",
+                Address = "5809 sokak Acarlar Mah. Turgutlu / Manisa"
             });
             UserList.Add(new Customer()
             {
                 Id = 1,
                 UserType = UserType.CUSTOMER,
-                Username = "1234",
-                Password = "1234",
-                Name = "Deniz Gökçe",
-                Address = "Izmir"
+                Username = "maho",
+                Password = "maho123",
+                Name = "Muhammed Mehdi",
+                Address = "5694 sokak İnönü Cad. Karabağlar / İzmir"
             });
 
             ItemList.Add(new Item()
             {
                 ID = 0,
-                Name = "Super Product",
-                Weight = 1,
-                Price = 100,
-                Tax = 10,
-                Stock = 5,
-                Description = "Super Product",
-                Picture = new Bitmap(Properties.Resources.lgtv, new Size(300, 300))
+                Name = "MSI Notebook",
+                Weight = 2,
+                Price = 4999,
+                Tax = 18,
+                Stock = 19,
+                Description = "Intel Core i5 7300HQ 8GB 1TB GTX1050 Freedos 15.6' FHD Taşınabilir Bilgisayar",
+                Picture = new Bitmap(Properties.Resources._9863517470770, new Size(300, 300))
             });
             ItemList.Add(new Item()
             {
                 ID = 1,
-                Name = "Mega Product",
+                Name = "Mitsubishi Klima",
                 Weight = 6,
-                Price = 1000,
-                Tax = 5,
-                Stock = 0,
-                Description = "Mega Product",
-                Picture = new Bitmap(Properties.Resources.lgtv, new Size(300, 300))
-            });
-            ItemList.Add(new Item()
-            {
-                ID = 2,
-                Name = "Uber Product",
-                Weight = 35,
-                Price = 10,
-                Tax = 50,
-                Stock = 7,
-                Description = "Uber Product",
-                Picture = new Bitmap(Properties.Resources.lgtv, new Size(300, 300))
+                Price = 3870,
+                Tax = 18,
+                Stock = 6,
+                Description = "12000 BTU Duvar Tipi Inverter Klima",
+                Picture = new Bitmap(Properties.Resources._9816549425202, new Size(300, 300))
             });
         }
     }

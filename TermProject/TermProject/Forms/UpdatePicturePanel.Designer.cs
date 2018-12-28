@@ -28,22 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureItem = new System.Windows.Forms.PictureBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureItem = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureItem)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureItem
-            // 
-            this.pictureItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureItem.Image = global::TermProject.Properties.Resources.default_product;
-            this.pictureItem.Location = new System.Drawing.Point(12, 12);
-            this.pictureItem.Name = "pictureItem";
-            this.pictureItem.Size = new System.Drawing.Size(286, 218);
-            this.pictureItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureItem.TabIndex = 1;
-            this.pictureItem.TabStop = false;
             // 
             // btnLoad
             // 
@@ -58,6 +47,17 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureItem
+            // 
+            this.pictureItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureItem.Image = global::TermProject.Properties.Resources.default_product;
+            this.pictureItem.Location = new System.Drawing.Point(12, 12);
+            this.pictureItem.Name = "pictureItem";
+            this.pictureItem.Size = new System.Drawing.Size(286, 218);
+            this.pictureItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureItem.TabIndex = 1;
+            this.pictureItem.TabStop = false;
             // 
             // UpdatePicturePanel
             // 
