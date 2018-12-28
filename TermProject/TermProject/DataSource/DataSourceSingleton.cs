@@ -45,13 +45,13 @@ namespace TermProject.DataSource
             UserList.Add(new Admin()
             {
                 UserType = UserType.ADMIN,
-                Username = "volkankahraman",
+                Username = "volkan",
                 Password = "admin"
             });
             UserList.Add(new Customer()
             {
                 UserType = UserType.CUSTOMER,
-                Username = "ulasgokce",
+                Username = "ulas",
                 Password = "ulas123",
                 Name = "Ulaş Gökçe",
                 Address = "1671 sokak Tersane Mah. Karşıyaka / İzmir"
@@ -61,7 +61,7 @@ namespace TermProject.DataSource
                 Id = 0,
                 UserType = UserType.CUSTOMER,
                 Username = "ardanuc",
-                Password = "ardanuc123",
+                Password = "123",
                 Name = "Ardanuc Akar",
                 Address = "5809 sokak Acarlar Mah. Turgutlu / Manisa"
             });
@@ -84,7 +84,7 @@ namespace TermProject.DataSource
                 Tax = 18,
                 Stock = 19,
                 Description = "Intel Core i5 7300HQ 8GB 1TB GTX1050 Freedos 15.6' FHD Taşınabilir Bilgisayar",
-                Picture = new Bitmap(Properties.Resources._9863517470770, new Size(300, 300))
+                Picture = new Bitmap(Properties.Resources._9816549425202, new Size(300, 300))
             });
             ItemList.Add(new Item()
             {
@@ -95,7 +95,7 @@ namespace TermProject.DataSource
                 Tax = 18,
                 Stock = 6,
                 Description = "12000 BTU Duvar Tipi Inverter Klima",
-                Picture = new Bitmap(Properties.Resources._9816549425202, new Size(300, 300))
+                Picture = new Bitmap(Properties.Resources._9863517470770, new Size(300, 300))
             });
         }
     }

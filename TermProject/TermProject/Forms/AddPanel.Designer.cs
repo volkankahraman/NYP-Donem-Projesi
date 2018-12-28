@@ -89,14 +89,14 @@
             this.txtTax.Location = new System.Drawing.Point(36, 218);
             this.txtTax.Name = "txtTax";
             this.txtTax.Size = new System.Drawing.Size(100, 20);
-            this.txtTax.TabIndex = 4;
+            this.txtTax.TabIndex = 3;
             // 
             // txtWeight
             // 
             this.txtWeight.Location = new System.Drawing.Point(32, 125);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(100, 20);
-            this.txtWeight.TabIndex = 5;
+            this.txtWeight.TabIndex = 1;
             // 
             // lblPrice
             // 
@@ -121,7 +121,7 @@
             this.txtPrice.Location = new System.Drawing.Point(36, 263);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtPrice.TabIndex = 8;
+            this.txtPrice.TabIndex = 4;
             // 
             // txtDescription
             // 
@@ -129,14 +129,14 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(188, 91);
-            this.txtDescription.TabIndex = 9;
+            this.txtDescription.TabIndex = 5;
             // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(258, 312);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -157,7 +157,7 @@
             this.txtStock.Location = new System.Drawing.Point(36, 172);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 20);
-            this.txtStock.TabIndex = 13;
+            this.txtStock.TabIndex = 2;
             // 
             // lblStock
             // 
@@ -173,7 +173,7 @@
             this.btnLoad.Location = new System.Drawing.Point(206, 154);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(142, 21);
-            this.btnLoad.TabIndex = 14;
+            this.btnLoad.TabIndex = 6;
             this.btnLoad.Text = "Resim Ekle";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
@@ -183,7 +183,7 @@
             this.txtName.Location = new System.Drawing.Point(32, 70);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 17;
+            this.txtName.TabIndex = 0;
             // 
             // lblName
             // 

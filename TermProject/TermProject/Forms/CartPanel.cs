@@ -121,7 +121,7 @@ namespace TermProject.Forms
                             if (ActiveCustomer.Cart.Count == 0)
                             {
                                 MessageBox.Show("Sepette Ürün Kalmadı");
-                                this.Close();
+                                //this.Close();
                             }
                         }
                     }

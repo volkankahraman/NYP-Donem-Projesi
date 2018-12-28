@@ -23,7 +23,6 @@ namespace TermProject
             InitializeComponent();
         }
         
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddPanel add = new AddPanel();
@@ -53,8 +52,6 @@ namespace TermProject
             admin.dataGridOrders = dataGridOrders;
             admin.setDataSource();
             ((DataGridViewImageColumn)dataGridItems.Columns[6]).ImageLayout = DataGridViewImageCellLayout.Zoom; ;
-
-
         }
 
         private void dataGridItems_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -62,8 +59,7 @@ namespace TermProject
            if(dataGridItems.SelectedCells[0].ColumnIndex == 6){
                 UpdatePicturePanel updataPicturePanel = new UpdatePicturePanel(Convert.ToInt32(dataGridItems.Rows[dataGridItems.SelectedCells[0].RowIndex].Cells[0].Value));
                 updataPicturePanel.ShowDialog();
-            }
-            
+            }            
         }
 
         private void dataGridItems_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -89,7 +85,6 @@ namespace TermProject
             }
         }
 
-
         public bool canceled = false;
         private void dataGridOrders_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -106,7 +101,6 @@ namespace TermProject
                     canceled = true;
                 }
             }
-
         }
 
         private void dataGridOrders_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
