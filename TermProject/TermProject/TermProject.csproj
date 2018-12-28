@@ -111,7 +111,7 @@
     <Compile Include="Models\BankModel\Bank.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\AdminModel\GenerateId.cs" />
+    <Compile Include="Models\AdminModel\GenerateID.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\OrderModels\Order.cs" />
     <Compile Include="Models\OrderModels\OrderDetail.cs" />

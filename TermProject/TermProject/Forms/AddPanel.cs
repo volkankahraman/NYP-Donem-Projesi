@@ -16,7 +16,7 @@ namespace TermProject.Forms
 {
     public partial class AddPanel : Form
     {
-        Id id = new Id();
+        GeneratedID id = new GeneratedID();
         Admin admin = DataSourceSingleton.GetInstance().ActiveAdmin;
 
         public AddPanel()

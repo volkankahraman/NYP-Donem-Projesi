@@ -7,7 +7,7 @@ using TermProject.DataSource;
 
 namespace TermProject.Models
 {
-    class Id
+    class GeneratedID
     {
         int maxID = 0;
         public int getNextId()
