@@ -71,7 +71,7 @@ namespace TermProject.Forms
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            Picture picture = new Picture();
+            GetPicture picture = new GetPicture();
             if(picture.getPicture() != null)
                 productPicture.Image = picture.getPicture();
         }

@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace TermProject.Models.AdminModel
 {
-    class Picture
+    class GetPicture
     {
         Image image;
 
-        public Picture()
+        public GetPicture()
         {
             OpenFileDialog file = new OpenFileDialog();
 

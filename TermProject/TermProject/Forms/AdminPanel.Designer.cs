@@ -57,6 +57,7 @@
             // 
             this.dataGridOrders.AllowUserToAddRows = false;
             this.dataGridOrders.AllowUserToDeleteRows = false;
+            this.dataGridOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridOrders.Location = new System.Drawing.Point(13, 6);
             this.dataGridOrders.Name = "dataGridOrders";
