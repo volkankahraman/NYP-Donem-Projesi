@@ -1,5 +1,11 @@
 
 # Alışveriş Otomasyonu
+### Proje Ortakları
+[Ardanuc Akar](https://github.com/ArdanucAKAR)
+
+[Ulaş Gökçe](https://github.com/ulasgokce)
+
+[Mahomaddah](https://github.com/mahomaddah)
 
 
 Dokümantasyon
@@ -7,7 +13,7 @@ Dokümantasyon
 
 Bu proje Nesneye Yönelik Programlama dersi için dönem ödevi olarak oluşturulmuştur OOP(Object Orianted Programming) kullanarak tasarlanmıştır.
 
-Uml Diagramı için [Tıklayın](https://drive.google.com/open?id=1G98I9LLKH1wXDCqx0D3Yb9qloT_HoEFOjDGnSms8Sgw)
+Uml Diagramı için [Tıklayın](https://raw.githubusercontent.com/volkankahraman/NYP-Donem-Projesi/master/TermProject/ClassDiagram1.png)
 
 Resimler
 -----
